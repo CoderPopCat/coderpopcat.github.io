@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Portfolio</title>
+  <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="assets/css/util.css">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://popcat.xyz/static/nav.js" defer></script>
+  <link rel="stylesheet" href="https://popcat.xyz/static/nav.css">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta2/css/all.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+</head>
+
+<body>
+  <nav id='nav' style="width: 100vw; backdrop-filter: blur(5px); box-shadow: inset 0 -1px 0 0 hsla(0,0%,100%,0.1)">
+    <div class="nav-container-custom nav-wrapper">
+      <div class="brand">
+        <span>
+          <strong class="shine" style="color: white; font-family: monospace; font-size: 30px">Portfolio</strong>
+        </span>
+      </div>
+      <div class="hamburger" style="padding-left: 23px;">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul class="nav-list">
+        <li><a class="nav-link" href="#">Home</a></li>
+        <li><a class="nav-link" href="#about">About</a></li>
+        <li><a class="nav-link" target="_blank" href="/projects">Projects</a> </li>
+        <li><a class="nav-link" target="_blank" style="color: #007CF0" href="https://ko-fi.com/popcatdev">Donate</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="content">
+    <div id="bg"></div>
+    <div class="social">
+      <a href="https://popcat.xyz/server" id="discord" target="_blank" class="icon">
+        <i class="fab fa-discord"></i>
+      </a>
+      <a href="https://www.instagram.com/sharanpreet1124" id="instagram" target="_blank" class="icon">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://github.com/CoderPopCat" id="github" target="_blank" class="icon">
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="text">
+      <h1 class="shine head">Zero Two.</h1>
+      <p class="paragraph">Developer Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, iusto!</p>
+      <button class="hero-button">Discord</button>
+    </div>
+  </div>
+  <section id="about" class="about">
+    <span class="line"></span>
+    <div class="section-label">
+      <div class="label-number">1</div>
+    </div>
+    <!-- <h4 class="about-title c-white">About</h4> -->
+    <div class="about-content d-flex align-center space-between row">
+      <div class="about-img">
+        <!-- <div class="about-light"></div> -->
+        <img src="https://dummyimage.com/400x300/fff/000" alt="img">
+      </div>
+      <div class="about-text">
+        <h4 class="about-title c-white">About Me</h4>
+        <p class="about-description grey">I am a Full Stack Developer and a computer enthusiast. I have a good knowledge
+          of HTML, CSS, Javascript, Nodejs, Reactjs, MongoDB, Git, and more.</p>
+      </div>
+    </div>
+  </section>
+  <div class="stats">
+    <section class="statistics">
+      <div class="stats-container">
+        <div class="stats-item">
+          <p data-purecounter-start="0" data-purecounter-end="8" data-purecounter-duration="3" class="highlight purecounter"></p><span class="stats-description">Completed Projects</span>
+        </div>
+        <div class="stats-item">
+          <p data-purecounter-start="0" data-purecounter-end="60" data-purecounter-duration="3" class="highlight purecounter dollar"></p><span class="stats-description">Money from Donations</span>
+        </div>
+        <div class="stats-item">
+          <p data-purecounter-start="0" data-purecounter-end="7" data-purecounter-duration="3" class="highlight purecounter"></p><span class="stats-description">Areas of Knowledge</span>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/@srexi/purecounterjs/dist/purecounter_vanilla.js"></script>
+  <script>
+    new PureCounter({
+    selector: '.purecounter',
+    start: 0, 
+    end: 100,
+    duration: 2,
+    delay: 10,
+    once: true,
+    repeat: false,
+    decimals: 0,
+    legacy: true,
+    filesizing: false,
+    currency: false,
+    separator: false,
+});
+  </script>
+  <script src="https://unpkg.com/@popperjs/core@2"></script>
+  <script src="https://unpkg.com/tippy.js@6"></script>
+  <script src="assets/js/script.js"></script>
+  <script type="text/javascript" src="https://popcat.xyz/static/particles.min.js"></script>
+  <script type="text/javascript" src="https://popcat.xyz/static/home.js"></script>
+</body>
+
+</html>
