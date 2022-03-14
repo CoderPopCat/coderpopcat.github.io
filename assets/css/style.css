@@ -148,6 +148,9 @@ body {
     padding-right: 1px;
     height: 100px;
 }
+.project-label {
+    background: linear-gradient(90deg,#7928ca,#ff0080) !important;
+}
 
 .label-number {
     text-rendering: optimizeLegibility;
@@ -176,7 +179,7 @@ body {
     padding: 5% 5%;
     padding-left: 24px;
     padding-right: 24px;
-    min-height: max-content
+    min-height: max-content;
 }
 
 .about-content {
@@ -299,6 +302,82 @@ body {
     text-transform: uppercase;
     color: #888;
 }
+
+.projects {
+    background-color: #000;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5% 5%;
+    padding-left: 24px;
+    padding-right: 24px;
+    min-height: max-content;
+}
+
+.project-content {
+    margin-top: 30px;
+    max-width: 71%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.card {
+    padding: 24px;
+    border-radius: 16px;
+    box-shadow: 0 30px 60px rgba(255, 255, 255, 0.12);
+    max-width: 260px;
+    background: #000;
+    border: 1px solid #333;
+  }
+  
+  .card img {
+    width: 100%;
+    border-radius: 15px;
+  }
+  
+  .card-heading {
+    margin-top: 24px;
+    font-size: 32px;
+    font-weight: 700;
+    color: #fff
+  }
+  
+  .card-description {
+    font-size: 16px;
+    color: #fff;
+  }
+  
+  .buttons {
+    display: flex;
+  }
+  
+  .card-button {
+    cursor: pointer;
+    height: 45px;
+    line-height: 40px;
+    padding: 0 12px;
+    font-size: 19px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    border-radius: 5px;
+    margin-top: 10px;
+    background: #fff;
+    color: #000;
+    border: 2px solid #000;
+    transition: .15s ease;
+    width: 100%;
+    transition-property: color,background,border-color;
+  }
+  .card-button:hover {
+    color: white;
+    background: black;
+    border-color: white;
+  }
 
 @keyframes gradient {
 	0% {
