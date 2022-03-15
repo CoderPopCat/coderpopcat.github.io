@@ -75,7 +75,7 @@ const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('canv
 renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(452, 250);
 const scene = new THREE.Scene();
-let camera = new THREE.PerspectiveCamera(26, window.innerWidth / window.innerHeight, 0.1, 1000);
+let camera = new THREE.PerspectiveCamera(27, window.innerWidth / window.innerHeight, 0.1, 1000);
 camera.position.z = 5;
 const sphere_geometry = new THREE.SphereGeometry(1, 128, 128);
 const material = new THREE.MeshNormalMaterial();
