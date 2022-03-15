@@ -40,7 +40,32 @@ const sr = ScrollReveal({
 
 const ops = { interval: 100 }
 
-sr.reveal('.head, .paragraph, .hero-button', ops)
-sr.reveal('.icon', ops)
-sr.reveal(".about-title, .about-img, .about-text", ops)
-sr.reveal('.stats-item', ops)
+sr.reveal('.head, .paragraph, .hero-button', ops);
+sr.reveal('.icon', ops);
+sr.reveal(".about-title, .about-img, .about-text, .about-description.grey", ops);
+sr.reveal('.stats-item', ops);
+
+// Projects
+
+const container = document.querySelector('.project-content');
+projects.forEach((project) => {
+	container.innerHTML +=
+		`<div class="card">
+			<div class="card-content">
+			<h3 class="card-heading">${project.name}</h3>
+			<p class="card-description">${project.description}</p>
+			<div class="buttons">
+			  <button onclick="window.open('${project.url}', '_blank')" class="card-button">Visit&nbsp;<i class="fa-solid fa-arrow-up-right-from-square"></i></button>
+			</div>
+			</div>
+  		</div>`
+})
+
+// Nav
+
+const links = document.querySelectorAll(".nav-link");
+Array.from(links).forEach(link => {
+	if (link.getAttribute('data-scroll')) {
+		link.onclick = () => window.scrollTo({ top: document.querySelector(link.getAttribute("data-scroll")).offsetTop, behavior: 'smooth' })
+	}
+})

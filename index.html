@@ -29,15 +29,15 @@
         <span></span>
       </div>
       <ul class="nav-list">
-        <li><a class="nav-link" href="#">Home</a></li>
-        <li><a class="nav-link" href="#about">About</a></li>
-        <li><a class="nav-link" target="_blank" href="/projects">Projects</a> </li>
+        <li><a class="nav-link" data-scroll="#">Home</a></li>
+        <li><a class="nav-link" data-scroll="#about">About</a></li>
+        <li><a class="nav-link" target="_blank" data-scroll="#projects">Projects</a> </li>
         <li><a class="nav-link" target="_blank" style="color: #007CF0" href="https://ko-fi.com/popcatdev">Donate</a>
         </li>
       </ul>
     </div>
   </nav>
-  <div class="content">
+  <div class="content" id="">
     <div id="bg"></div>
     <div class="social">
       <a href="https://popcat.xyz/server" id="discord" target="_blank" class="icon">
@@ -52,8 +52,8 @@
     </div>
     <div class="text">
       <h1 class="shine head">Zero Two.</h1>
-      <p class="paragraph">Developer Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, iusto!</p>
-      <button class="hero-button">Discord</button>
+      <p class="paragraph">Frontend & Backend Developer.</p>
+      <button class="hero-button nav-link" data-scroll="#projects">Projects</button>
     </div>
   </div>
   <section id="about" class="about">
@@ -78,13 +78,16 @@
     <section class="statistics">
       <div class="stats-container">
         <div class="stats-item">
-          <p data-purecounter-start="0" data-purecounter-end="8"  class="highlight purecounter"></p><span class="stats-description">Completed Projects</span>
+          <p data-purecounter-start="0" data-purecounter-end="8" class="highlight purecounter"></p><span
+            class="stats-description">Completed Projects</span>
         </div>
         <div class="stats-item">
-          <p data-purecounter-start="0" data-purecounter-end="60" class="highlight purecounter dollar"></p><span class="stats-description">Money from Donations</span>
+          <p data-purecounter-start="0" data-purecounter-end="60" class="highlight purecounter dollar"></p><span
+            class="stats-description">Money from Donations</span>
         </div>
         <div class="stats-item">
-          <p data-purecounter-start="0" data-purecounter-end="7" class="highlight purecounter"></p><span class="stats-description">Areas of Knowledge</span>
+          <p data-purecounter-start="0" data-purecounter-end="7" class="highlight purecounter"></p><span
+            class="stats-description">Areas of Knowledge</span>
         </div>
       </div>
     </section>
@@ -95,36 +98,36 @@
       <div class="label-number project-label">2</div>
     </div>
     <h4 class="about-title c-white">Projects</h4>
+    <p class="about-description grey" style="font-size: 18px;">Projects I've Made :)</p>
     <div class="project-content">
-      <div class="card">
-        <img src="https://cdn.popcat.xyz/popcat.png">
-        <h3 class="card-heading">Title</h3>
-        <p class="card-description">Get started with a statically generated blog using Next.js and Wordpress. Keep your content workflow and improve performance and security.</p>
-        <div class="buttons">
-          <button class="card-button">Button</button>
-        </div>
-      </div>
     </div>
   </section>
+  <footer>
+    <div class="footer-content">
+      <h3>Zero Two</h3>
+      <p>Created and Managed by Zero Two#7177</p>
+    </div>
+  </footer>
   <script src="https://cdn.jsdelivr.net/npm/@srexi/purecounterjs/dist/purecounter_vanilla.js"></script>
   <script>
     new PureCounter({
-    selector: '.purecounter',
-    start: 0, 
-    end: 100,
-    duration: 2,
-    delay: 10,
-    once: true,
-    repeat: false,
-    decimals: 0,
-    legacy: true,
-    filesizing: false,
-    currency: false,
-    separator: false,
-});
+      selector: '.purecounter',
+      start: 0,
+      end: 100,
+      duration: 2,
+      delay: 10,
+      once: true,
+      repeat: false,
+      decimals: 0,
+      legacy: true,
+      filesizing: false,
+      currency: false,
+      separator: false,
+    });
   </script>
   <script src="https://unpkg.com/@popperjs/core@2"></script>
   <script src="https://unpkg.com/tippy.js@6"></script>
+  <script src="assets/js/projects.js"></script>
   <script src="assets/js/script.js"></script>
   <script type="text/javascript" src="https://popcat.xyz/static/particles.min.js"></script>
   <script type="text/javascript" src="https://popcat.xyz/static/home.js"></script>

@@ -7,3 +7,4 @@
 .space-between {justify-content: space-between}
 .w-100 {width: 100%}
 .relative {position:relative}
+.column {flex-direction:column}

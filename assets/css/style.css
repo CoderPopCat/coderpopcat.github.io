@@ -34,6 +34,10 @@ nav {
     z-index: 3 !important;
 }
 
+.nav-link {
+    cursor: pointer;
+}
+
 body {
 	background: #000;
 	overflow-x: hidden;
@@ -320,7 +324,8 @@ body {
     margin-top: 30px;
     max-width: 71%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .card {
@@ -330,6 +335,21 @@ body {
     max-width: 260px;
     background: #000;
     border: 1px solid #333;
+    margin: 30px 20px;
+    transition: border 0.3s ease, transform 0.3s ease;
+  }
+
+  .card:hover {
+    border: 1px solid rgb(49,91,250);
+    cursor: pointer;
+    transform: scale(1.1)
+  }
+
+  .card-content {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    min-height: 100%;
   }
   
   .card img {
@@ -347,6 +367,8 @@ body {
   .card-description {
     font-size: 16px;
     color: #fff;
+    line-height: 1.6;
+    margin-top: 20px;
   }
   
   .buttons {
@@ -379,17 +401,56 @@ body {
     border-color: white;
   }
 
+
 @keyframes gradient {
-	0% {
-		background-position: 0% 50%;
+    0% {
+        background-position: 0% 50%;
 	}
 	50% {
-		background-position: 100% 50%;
+        background-position: 100% 50%;
 	}
 	100% {
-		background-position: 0% 50%;
+        background-position: 0% 50%;
 	}
 }
+
+.social-button {
+    display: inline-block;
+    text-decoration: none;
+    height: 48px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 18px;
+    width: 300px;
+    font-weight: 700;
+    line-height: 48px;
+    letter-spacing: .1px;
+    white-space: wrap;
+    border-radius: 8px;
+    cursor: pointer;
+    color: #fff;
+    margin-top: 15px;
+}
+
+.socials {
+    display: flex;
+    flex-direction: column;
+}
+
+.input {
+    color: #FFFFFF;
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    border: 1px solid white;
+    border-radius: 5px;
+    padding-left: 15px;
+    margin: 0 1px;
+    height: 45px;
+    font-size: 18px;
+    transition: border-color 150ms ease;
+}
+
 
 /* Media Query */
 
@@ -440,4 +501,38 @@ body {
 		border-bottom: 1px solid #333;
 	    padding: 12px 33px;
 	}
+
+    .project-content {
+        flex-direction: column;
+    }
+}
+
+
+footer{
+    background: #000;
+    height: max-content;
+    width: 100vw;
+    font-family: Inter, sans-serif;
+    padding: 30px;
+    color: #fff;
+    border-top: 1px solid #333;
+}
+.footer-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+.footer-content h3{
+    font-size: 1.8rem;
+    font-weight: 400;
+    text-transform: capitalize;
+    line-height: 3rem;
+}
+.footer-content p{
+    max-width: 500px;
+    margin: 10px auto;
+    line-height: 28px;
+    font-size: 14px;
 }
