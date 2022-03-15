@@ -69,3 +69,32 @@ Array.from(links).forEach(link => {
 		link.onclick = () => window.scrollTo({ top: document.querySelector(link.getAttribute("data-scroll")).offsetTop, behavior: 'smooth' })
 	}
 })
+
+// Blob
+const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('canvas'), antialias: true });
+renderer.setPixelRatio(window.devicePixelRatio);
+renderer.setSize(452, 250);
+const scene = new THREE.Scene();
+let camera = new THREE.PerspectiveCamera(26, window.innerWidth / window.innerHeight, 0.1, 1000);
+camera.position.z = 5;
+const sphere_geometry = new THREE.SphereGeometry(1, 128, 128);
+const material = new THREE.MeshNormalMaterial();
+let sphere = new THREE.Mesh(sphere_geometry, material);
+scene.add(sphere);
+const update = function () {
+	const time = performance.now() * 0.003;
+	const k = 3;
+	for (let i = 0; i < sphere.geometry.vertices.length; i++) {
+		let p = sphere.geometry.vertices[i];
+		p.normalize().multiplyScalar(1 + 0.3 * noise.perlin3(p.x * k + time, p.y * k, p.z * k));
+	}
+	sphere.geometry.computeVertexNormals();
+	sphere.geometry.normalsNeedUpdate = true;
+	sphere.geometry.verticesNeedUpdate = true;
+}
+function animate() {
+	update();
+	renderer.render(scene, camera);
+	requestAnimationFrame(animate);
+}
+requestAnimationFrame(animate);
