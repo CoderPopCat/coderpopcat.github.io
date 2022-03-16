@@ -505,6 +505,10 @@ body {
     .project-content {
         flex-direction: column;
     }
+
+    #canvas {
+        display: none;
+    }
 }
 
 
