@@ -197,23 +197,6 @@ body {
     border-radius: 3%;
 }
 
-.about-light {
-    --start-color: #FF4D4D;
-    --end-color: #F9CB28;
-    --start-color-2: #7928CA;
-    --end-color-2: #FF0080;
-    background-image: linear-gradient(-45deg , #007CF0, #00DFD8, var(--start-color-2), var(--end-color-2), var(--start-color), var(--end-color));
-    animation: gradient 5s ease-in-out infinite;
-    background-size: 400% 400%;
-    filter: blur(80px);
-    position: absolute;
-    border-radius: 50%;
-    width: 25%;
-    height: 40%;
-    z-index: 0;
-    transform: translateY(36px), transalteY(-40px), scale(4);
-}
-
 .about-title {
     padding-bottom: 12px;
     font-size: 3.75rem;
