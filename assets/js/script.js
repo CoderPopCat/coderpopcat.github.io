@@ -137,8 +137,10 @@ const tips = [
 	},
 ];
 
-for (const { query, content } of tips) {
-	tippy(query, { content })
+if (window.innerWidth > 600) {
+	for (const { query, content } of tips) {
+		tippy(query, { content })
+	}
 }
 
 
@@ -212,7 +214,7 @@ Array.from(links).forEach(link => {
 })
 window.addEventListener('resize', add)
 function add() {
-	if (window.innerWidth < 860) {
+	if (window.innerWidth < 600) {
 		document.body.classList.add('mobile')
 	} else {
 		document.body.classList.remove('mobile')
