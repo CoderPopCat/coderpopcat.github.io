@@ -212,7 +212,7 @@ Array.from(links).forEach(link => {
 })
 window.addEventListener('resize', add)
 function add() {
-	if (window.innerWidth < 600) {
+	if (window.innerWidth < 900) {
 		document.body.classList.add('mobile')
 	} else {
 		document.body.classList.remove('mobile')
