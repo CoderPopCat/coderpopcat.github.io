@@ -137,10 +137,8 @@ const tips = [
 	},
 ];
 
-if (window.innerWidth > 600) {
-	for (const { query, content } of tips) {
-		tippy(query, { content })
-	}
+for (const { query, content } of tips) {
+	tippy(query, { content })
 }
 
 

@@ -81,8 +81,8 @@
             class="stats-description">Completed Projects</span>
         </div>
         <div class="stats-item">
-          <p class="highlight">$<span data-purecounter-start="0" data-purecounter-end="70" class="highlight purecounter">70</span></p><span
-            class="stats-description">Money from Donations</span>
+          <p class="highlight">$<span data-purecounter-start="0" data-purecounter-end="70"
+              class="highlight purecounter">70</span></p><span class="stats-description">Money from Donations</span>
         </div>
         <div class="stats-item">
           <p data-purecounter-start="0" data-purecounter-end="7" class="highlight purecounter">7</p><span
@@ -109,20 +109,22 @@
   </footer>
   <script src="https://cdn.jsdelivr.net/npm/@srexi/purecounterjs/dist/purecounter_vanilla.js"></script>
   <script>
-    new PureCounter({
-      selector: '.purecounter',
-      start: 0,
-      end: 100,
-      duration: 2,
-      delay: 10,
-      once: true,
-      repeat: false,
-      decimals: 0,
-      legacy: true,
-      filesizing: false,
-      currency: false,
-      separator: false,
-    });
+    if (window.innerWidth > 600) {
+      new PureCounter({
+        selector: '.purecounter',
+        start: 0,
+        end: 100,
+        duration: 2,
+        delay: 10,
+        once: true,
+        repeat: false,
+        decimals: 0,
+        legacy: true,
+        filesizing: false,
+        currency: false,
+        separator: false,
+      });
+    }
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r83/three.js"></script>
   <script src="https://fariskassim.com/stage/rebel9/teaf/blob/v4/js/perlin.js"></script>
