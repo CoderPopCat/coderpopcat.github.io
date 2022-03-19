@@ -492,6 +492,11 @@ body {
     #canvas {
         display: none;
     }
+
+    .card {
+        display: block;
+        margin: 30px auto;
+    }
 }
 
 
