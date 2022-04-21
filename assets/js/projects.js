@@ -10,11 +10,6 @@ const projects = [
         "url": "https://popcat.xyz/todo"
     },
     {
-        "name": "YouTube Video Downloader",
-        "description": "Very simple and easy to use YouTube Video Downloader with custom File Names and different formats!",
-        "url": "https://popcat.xyz/youtube-downloader"
-    },
-    {
         "name": "Code Bin",
         "description": "Store and Access your codes on the cloud",
         "url": "https://code.popcat.xyz"
