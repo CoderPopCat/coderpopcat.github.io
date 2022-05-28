@@ -2,7 +2,7 @@ const projects = [
     {
         "name": "Pop Chat",
         "description": "An online chatting website with a beautiful UI and the ability to create your own chat rooms! Made originally for a hackathon",
-        "url": "https://hackathon-chat.popcat.xyz"
+        "url": "https://chat.popcat.xyz"
     },
     {
         "name": "TODO List",
