@@ -2,7 +2,7 @@ const projects = [
     {
         "name": "Pop Cat",
         "description": "A cool multipurpose discord bot with a lot of commands and functionality.",
-        "url": "https://discord.com/oauth2/authorize?client_id=905729887413874700&permissions=2483341366&scope=bot%20applications.commands"
+        "url": "https://discord.com/oauth2/authorize?client_id=804341143092985886&permissions=2483341366&scope=bot%20applications.commands"
     },
     {
         "name": "Pop Chat",
