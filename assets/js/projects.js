@@ -5,9 +5,24 @@ const projects = [
         "url": "https://discord.com/oauth2/authorize?client_id=804341143092985886&permissions=2483341366&scope=bot%20applications.commands"
     },
     {
+        "name": "Pop Cat Wrapper - NPM Package",
+        "description": "An NPM Package To Make Your Life Easier While Using The Pop Cat API!",
+        "url": "https://npmjs.com/popcat-wrapper"
+    },
+    {
+        "name": "Pop Cat API",
+        "description": "The Only API You'll Ever Need! Has Tons of Image Manipulation and Utility Endpoints!",
+        "url": "https://popcat.xyz/api"
+    },
+    {
         "name": "Pop Chat",
         "description": "An online chatting website with a beautiful UI and the ability to create your own chat rooms! Made originally for a hackathon",
         "url": "https://chat.popcat.xyz"
+    },
+    {
+        "name": "Cloe.gg",
+        "description": "A bot website created for a commission, it is also one of the best websites i've ever created",
+        "url": "https://cloe.gg"
     },
     {
         "name": "TODO List",
@@ -20,23 +35,8 @@ const projects = [
         "url": "https://code.popcat.xyz"
     },
     {
-        "name": "Pop Cat API",
-        "description": "The Only API You'll Ever Need! Has Tons of Image Manipulation and Utility Endpoints!",
-        "url": "https://popcat.xyz/api"
-    },
-    {
-        "name": "Instagram User Profiles",
-        "description": "A very beautiful web page for viewing info for an instagram user!",
-        "url": "https://popcat.xyz/instagram"
-    },
-    {
         "name": "URL Shortener",
         "description": "A simple, easy to use URL shortener with statistics on the number of clicks on your endpoint",
         "url": "https://url.popcat.xyz"
     },
-    {
-        "name": "Pop Cat Wrapper - NPM Package",
-        "description": "An NPM Package To Make Your Life Easier While Using The Pop Cat API!",
-        "url": "https://npmjs.com/popcat-wrapper"
-    }
 ]
