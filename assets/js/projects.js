@@ -25,6 +25,11 @@ const projects = [
         "url": "https://cloe.gg"
     },
     {
+        "name": "YouTube Downloader",
+        "description": "A simple and easy to use YouTube Video Downloader tool!",
+        "url": "https://popcat.xyz/youtube-downloader"
+    },
+    {
         "name": "TODO List",
         "description": "An Online Todo List with localStorage option to save your tasks on one device only and a Login system to save them globally!",
         "url": "https://popcat.xyz/todo"
