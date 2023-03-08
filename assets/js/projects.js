@@ -20,6 +20,11 @@ const projects = [
         "url": "https://chat.popcat.xyz"
     },
     {
+        "name": "Chatbot",
+        "description": "An online chatbot ui based on brainshop.ai api",
+        "url": "https://popcat.xyz/chat"
+    },
+    {
         "name": "WouldYouBot",
         "description": "A bot website created for a commission, it is also one of the best websites i've ever created",
         "url": "https://wouldyoubot.com"
