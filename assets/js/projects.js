@@ -25,9 +25,9 @@ const projects = [
         "url": "https://popcat.xyz/chat"
     },
     {
-        "name": "WouldYouBot",
+        "name": "Cloe",
         "description": "A bot website created for a commission, it is also one of the best websites i've ever created",
-        "url": "https://wouldyoubot.com"
+        "url": "https://cloe.gg"
     },
     {
         "name": "YouTube Downloader",
