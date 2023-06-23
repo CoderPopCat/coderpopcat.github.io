@@ -1,6 +1,7 @@
 
 AOS.init();
 
+
 window.addEventListener('scroll', e => {
 	if (document.documentElement.scrollTop > 20) {
 		const nav = document.getElementById('nav')
@@ -52,14 +53,14 @@ const container = document.querySelector('.project-content');
 projects.forEach((project) => {
 	container.innerHTML +=
 		`<div class="card">
-			<div class="card-content">
-			<h3 class="card-heading">${project.name}</h3>
-			<p class="card-description">${project.description}</p>
-			<div class="buttons">
-			  <button onclick="window.open('${project.url}', '_blank')" class="card-button">Visit&nbsp;<i class="fa-solid fa-arrow-up-right-from-square"></i></button>
-			</div>
-			</div>
-  		</div>`
+	<div class="card-content">
+	<h3 class="card-heading">${project.name}</h3>
+	<p class="card-description">${project.description}</p>
+	<div class="buttons">
+	<button onclick="window.open('${project.url}', '_blank')" class="card-button">Visit&nbsp;<i class="fa-solid fa-arrow-up-right-from-square"></i></button>
+	</div>
+	</div>
+	</div>`
 })
 
 
@@ -108,7 +109,7 @@ function add() {
 		document.body.classList.remove('mobile')
 	}
 }
-window.onload = add;
+window.onload = init;
 let hamburger = document.querySelector('.hamburger')
 let mobileNav = document.querySelector('.nav-list')
 let bars = document.querySelectorAll('.hamburger span')
@@ -135,3 +136,14 @@ kofiWidgetOverlay.draw('popcatdev', {
 	'floating-chat.donateButton.background-color': '#ffffff',
 	'floating-chat.donateButton.text-color': '#323842'
 });
+
+// Counter
+const init = () => {
+	add();
+	localStorage.setItem('visits', parseInt(localStorage.getItem('visits')) + 1);
+	const count = localStorage.getItem('visits');
+	document.querySelector('.stats-container').innerHTML += `<div class="stats-item">
+	<p data-purecounter-start="0" data-purecounter-end="${count}" class="highlight purecounter">${count}</p><span
+	  class="stats-description>Portfolio Visits</span>
+  </div>`
+}
