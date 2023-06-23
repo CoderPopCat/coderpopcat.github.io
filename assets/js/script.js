@@ -109,7 +109,6 @@ function add() {
 		document.body.classList.remove('mobile')
 	}
 }
-window.onload = init;
 let hamburger = document.querySelector('.hamburger')
 let mobileNav = document.querySelector('.nav-list')
 let bars = document.querySelectorAll('.hamburger span')
@@ -144,6 +143,7 @@ const init = () => {
 	const count = localStorage.getItem('visits');
 	document.querySelector('.stats-container').innerHTML += `<div class="stats-item">
 	<p data-purecounter-start="0" data-purecounter-end="${count}" class="highlight purecounter">${count}</p><span
-	  class="stats-description>Portfolio Visits</span>
-  </div>`
+	class="stats-description>Portfolio Visits</span>
+	</div>`
 }
+window.onload = init;
