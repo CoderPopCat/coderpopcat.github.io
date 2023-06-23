@@ -136,14 +136,4 @@ kofiWidgetOverlay.draw('popcatdev', {
 	'floating-chat.donateButton.text-color': '#323842'
 });
 
-// Counter
-const init = () => {
-	add();
-	localStorage.setItem('visits', parseInt(localStorage.getItem('visits')) + 1);
-	const count = localStorage.getItem('visits');
-	document.querySelector('.stats-container').innerHTML += `<div class="stats-item">
-	<p data-purecounter-start="0" data-purecounter-end="${count}" class="highlight purecounter">${count}</p><span
-	class="stats-description>Portfolio Visits</span>
-	</div>`
-}
-window.onload = init;
+window.onload = add;

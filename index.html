@@ -138,7 +138,14 @@
         currency: false,
         separator: false,
       });
-    }
+    };
+    localStorage.setItem('visits', parseInt(localStorage.getItem('visits')) + 1);
+	  const count = localStorage.getItem('visits');
+	  document.querySelector('.stats-container').innerHTML += `
+    <div class="stats-item">
+	    <p data-purecounter-start="0" data-purecounter-end="${count}" class="highlight purecounter">${count}</p><span class="stats-description">Portfolio Visits</span>
+	  </div>
+    `
   </script>
   <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r98/three.js"></script>
