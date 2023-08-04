@@ -16,15 +16,17 @@
   <meta name="theme-color" content="#36393e">
   <meta name="msapplication-TileColor" content="#36393e">
   <meta name="title" content="Zero Two">
-  <meta name="description" content="The official portfolio of Zero Two#7177, showcasing my skills and projects that i've made">
+  <meta name="description"
+    content="The official portfolio of Zero Two#7177, showcasing my skills and projects that i've made">
   <meta name="keywords"
-      content="developer, zero two, freelance developer, programming, pop cat, pop cat api, pop cat discord bot">
+    content="developer, zero two, freelance developer, programming, pop cat, pop cat api, pop cat discord bot">
   <meta name="language" content="English">
   <meta name="author" content="Zero Two">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://zero.is-a.dev">
   <meta property="og:title" content="Zero Two">
-  <meta property="og:description" content="The official portfolio of Zero Two#7177, showcasing my skills and projects that i've made">
+  <meta property="og:description"
+    content="The official portfolio of Zero Two#7177, showcasing my skills and projects that i've made">
   <meta property="og:image" content="https://zero.is-a.dev/assets/img/website.png">
   <meta property="twitter:card" content="summary_large_image">
   <!-- Website Meta Data End -->
@@ -139,13 +141,16 @@
         separator: false,
       });
     };
-    localStorage.setItem('visits', parseInt(localStorage.getItem('visits')) + 1);
-	  const count = localStorage.getItem('visits');
-	  document.querySelector('.stats-container').innerHTML += `
+    const updateViews = async () => {
+      const response = await fetch('https://cdn.popcat.xyz/update');
+      const res = await response.json();
+      const count = res.count;
+      document.querySelector('.stats-container').innerHTML += `
     <div class="stats-item">
 	    <p data-purecounter-start="0" data-purecounter-end="${count}" class="highlight purecounter">${count}</p><span class="stats-description">Portfolio Visits</span>
-	  </div>
-    `
+	  </div>`
+    }
+
   </script>
   <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r98/three.js"></script>
