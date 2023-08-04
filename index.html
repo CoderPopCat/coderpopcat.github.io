@@ -148,10 +148,10 @@
     const updateViews = async () => {
       const response = await fetch('https://cdn.popcat.xyz/update');
       const res = await response.json();
-      const count = res.count;
+      const { count } = res;
       const viewsCount = document.getElementById('views-count');
-      viewsCount.innerHTML = count;
       viewsCount.setAttribute('data-purecounter-end', count);
+      viewsCount.innerHTML = count;
     }
     updateViews();
   </script>
