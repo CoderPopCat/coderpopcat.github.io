@@ -104,6 +104,10 @@
           <p data-purecounter-start="0" data-purecounter-end="7" class="highlight purecounter">7</p><span
             class="stats-description">Areas of Knowledge</span>
         </div>
+        <div class="stats-item">
+          <p data-purecounter-start="0" data-purecounter-end="" class="highlight purecounter" id="views-count"></p><span
+            class="stats-description">Portfolio Visits</span>
+        </div>
       </div>
     </section>
   </div>
@@ -145,10 +149,9 @@
       const response = await fetch('https://cdn.popcat.xyz/update');
       const res = await response.json();
       const count = res.count;
-      document.querySelector('.stats-container').innerHTML += `
-    <div class="stats-item">
-	    <p data-purecounter-start="0" data-purecounter-end="${count}" class="highlight purecounter">${count}</p><span class="stats-description">Portfolio Visits</span>
-	  </div>`
+      const viewsCount = document.getElementById('views-count');
+      viewsCount.innerHTML = count;
+      viewsCount.setAttribute('data-purecounter-end', count);
     }
     updateViews();
   </script>
