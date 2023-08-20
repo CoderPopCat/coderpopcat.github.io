@@ -765,6 +765,7 @@ footer {
   font-size: 19px;
   font-family: 'Nunito';
   font-weight: 600;
+  max-width: 84% !important;
 }
 
 .project-button {
