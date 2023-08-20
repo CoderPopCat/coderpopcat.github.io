@@ -622,13 +622,20 @@ body {
     display: block;
     margin: 30px auto;
   }
+
   .project-content {
     position: unset;
     transform: unset;
   }
-  .project-image, .left .project-image {
+
+  .project-image,
+  .left .project-image {
     transform: unset !important;
     margin-top: 14px !important;
+  }
+
+  .project-description {
+    max-width: 84% !important;
   }
 }
 
@@ -765,7 +772,6 @@ footer {
   font-size: 19px;
   font-family: 'Nunito';
   font-weight: 600;
-  max-width: 84% !important;
 }
 
 .project-button {
@@ -784,14 +790,16 @@ footer {
   position: absolute;
   inset: 0;
   z-index: -1;
-  clip-path: polygon(0 0,100% 0,100% calc(100% - 8px),calc(100% - 8px) 100%,0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%);
 }
 
-.right .project-image, .left .project-image {
+.right .project-image,
+.left .project-image {
   transition: all 0.5s ease-in-out;
 }
 
-.right .project-image:hover, .lsc:hover {
+.right .project-image:hover,
+.lsc:hover {
   filter: none !important;
 }
 
