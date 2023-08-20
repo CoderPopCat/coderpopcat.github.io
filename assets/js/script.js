@@ -46,22 +46,26 @@ sr.reveal('.head, .paragraph, .hero-button', ops);
 sr.reveal('.icon', ops);
 sr.reveal(".about-title, .about-img, .about-text, .about-description.grey", ops);
 sr.reveal('.stats-item', ops);
+sr.reveal('.card', { interval: 100, delay: 50 })
+// Project Right
+sr.reveal(".right .project-image", { interval: 100, origin: 'left', distance: '60px', duration: 2000 })
+sr.reveal('.right .project-content', { interval: 100, origin: 'right', distance: '60px', duration: 2000 })
+// Project Left
+sr.reveal(".left .project-image", { interval: 100, origin: 'right', distance: '180px', duration: 2000 })
+sr.reveal('.left .project-content', { interval: 100, origin: 'left', distance: '180px', duration: 2000 })
 
 // Projects
-
-const container = document.querySelector('.project-content');
-projects.forEach((project) => {
-	container.innerHTML +=
-		`<div class="card">
-	<div class="card-content">
-	<h3 class="card-heading">${project.name}</h3>
-	<p class="card-description">${project.description}</p>
-	<div class="buttons">
-	<button onclick="window.open('${project.url}', '_blank')" class="card-button">Visit&nbsp;<i class="fa-solid fa-arrow-up-right-from-square"></i></button>
-	</div>
-	</div>
-	</div>`
-})
+const countryImage = document.querySelector('.country-image');
+const countryImages = ['country1.png', 'country2.png', 'country3.png'];
+let i = 0;
+setInterval(() => {
+	countryImage.style.opacity = 0;
+	setTimeout(() => {
+		countryImage.src = 'assets/img/' + countryImages[i];
+		countryImage.style.opacity = 1;
+	}, 500);
+	i = (i + 1) % countryImages.length;
+}, 3000);
 
 
 // Blob

@@ -29,6 +29,7 @@
     content="The official portfolio of Zero Two#7177, showcasing my skills and projects that i've made">
   <meta property="og:image" content="https://zero.is-a.dev/assets/img/website.png">
   <meta property="twitter:card" content="summary_large_image">
+  <script src="https://cdn.tailwindcss.com"></script>
   <!-- Website Meta Data End -->
 </head>
 
@@ -71,25 +72,30 @@
       <h1 class="shine head">Zero Two.</h1>
       <p class="paragraph">Frontend & Backend Developer.</p>
       <button class="hero-button nav-link" data-scroll="#projects">Projects</button>
-    </div>
+    </div> 
   </div>
   <section id="about" class="about">
     <span class="line"></span>
-    <div class="section-label">
-      <div class="label-number">1</div>
-    </div>
-    <div class="about-content d-flex align-center space-between row">
-      <div class="about-img">
-        <canvas id="canvas"></canvas>
+    <div>
+      <div class="section-label">
+        <div class="label-number project-label">1</div>
       </div>
-      <div class="about-text">
-        <h4 class="about-title c-white">About Me</h4>
-        <p class="about-description grey">I am a Full Stack Developer and a computer enthusiast. I have a good knowledge
-          of HTML, CSS, Javascript, Nodejs, Reactjs, MongoDB, Git, and more.</p>
+      <div class="w-[100vw] flex justify-center items-center">
+        <div class="about-content d-flex align-center space-between row">
+          <div class="about-img">
+            <canvas id="canvas"></canvas>
+          </div>
+          <div class="about-text">
+            <h4 class="about-title c-white">About Me</h4>
+            <p class="about-description grey">I am a Full Stack Developer and a computer enthusiast. I have a good
+              knowledge
+              of HTML, CSS, Javascript, Nodejs, Reactjs, MongoDB, Git, and more.</p>
+          </div>
+        </div>
       </div>
-    </div>
   </section>
   <div class="stats">
+
     <section class="statistics">
       <div class="stats-container">
         <div class="stats-item">
@@ -112,13 +118,225 @@
     </section>
   </div>
   <section id="projects" class="projects">
-    <span style="background-image: linear-gradient(90deg,#7928ca,#ff0080);" class="line"></span>
+    <span class="line" style="background: linear-gradient(-45deg,  #007CF0, #000)"></span>
     <div class="section-label">
-      <div class="label-number project-label">2</div>
+      <div class="label-number">2</div>
     </div>
     <h4 class="about-title c-white">Projects</h4>
     <p class="about-description grey" style="font-size: 18px;">Projects I've Made :)</p>
-    <div class="project-content">
+    <section class="right">
+      <div
+        class="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6 relative">
+        <img class="w-full rounded-[5px] project-image" style="cursor:pointer;" src="/assets/img/1cawOf2VHMHs.png"
+          alt="project image">
+        <div class="mt-4 md:mt-0 flex justify-end flex-col text-right project-content items-end">
+          <div class="project-overline flex justify-end gap-[71px]">
+            <div class="divider">
+              <div class="divider-line" data-collapsed="false"></div>
+              <div class="divider-notch"></div>
+            </div>
+            <div class="number text-white">01</div>
+          </div>
+          <div class="project-title text-white">
+            Pop Cat Bot
+          </div>
+          <div class="project-description max-w-[84%]">
+            <p>A cool multipurpose <a href="https://discord.com" class="text-[#7289da]">Discord</a> bot with a lot of
+              commands and functionality.</p>
+          </div>
+          <a class="project-button mt-[14px] hover:scale-105"
+            href="https://discord.com/oauth2/authorize?client_id=804341143092985886&permissions=2483341366&scope=bot%20applications.commands"
+            rel="noopener noreferrer" target="_blank"><span class="project-button-text"><i class="fab fa-discord"></i>
+              Invite</span></a>
+        </div>
+      </div>
+    </section>
+    <section class="left">
+      <div
+        class="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6 relative">
+        <div class="mt-4 md:mt-0 flex justify-end flex-col text-left project-content items-start">
+          <div class="project-overline flex justify-end gap-[71px]">
+            <div class="divider">
+              <div class="divider-line" data-collapsed="false"></div>
+              <div class="divider-notch"></div>
+            </div>
+            <div class="number text-white">02</div>
+          </div>
+          <div class="project-title text-white">
+            Pop Cat API
+          </div>
+          <div class="project-description max-w-[68%]">
+            <p>
+              The Only API You'll Ever Need! Has Tons of Image Manipulation and Utility Endpoints!
+            </p>
+          </div>
+          <a class="project-button mt-[14px] hover:scale-105" href="https://popcat.xyz/api" rel="noopener noreferrer"
+            target="_blank"><span class="project-button-text"><i class="fa-solid fa-arrow-up-right-from-square"></i>
+              View</span></a>
+        </div>
+        <img class="w-full rounded-[5px] project-image lsc" style="cursor:pointer;" src="/assets/img/apibig.PNG"
+          alt="project image">
+      </div>
+    </section>
+    <section class="right">
+      <div
+        class="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6 relative">
+        <img class="w-full rounded-[5px] project-image country-image" style="cursor:pointer;"
+          src="/assets/img/country1.PNG" alt="project image">
+        <div class="mt-4 md:mt-0 flex justify-end flex-col text-right project-content items-end">
+          <div class="project-overline flex justify-end gap-[71px]">
+            <div class="divider">
+              <div class="divider-line" data-collapsed="false"></div>
+              <div class="divider-notch"></div>
+            </div>
+            <div class="number text-white">03</div>
+          </div>
+          <div class="project-title text-white">
+            Country Searcher
+          </div>
+          <div class="project-description max-w-[40%]">
+            <p>A website with a list of countries, offering detailed information on selected nations and the ability to calculate distances between any two countries.</p>
+          </div>
+          <a class="project-button mt-[14px] hover:scale-105" href="https://chat.popcat.xyz" rel="noopener noreferrer"
+            target="_blank"><span class="project-button-text"><i class="fa-solid fa-arrow-up-right-from-square"></i>
+              View</span></a>
+        </div>
+      </div>
+    </section>
+    <section class="left">
+      <div
+        class="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6 relative">
+        <div class="mt-4 md:mt-0 flex justify-end flex-col text-left project-content items-start">
+          <div class="project-overline flex justify-end gap-[71px]">
+            <div class="divider">
+              <div class="divider-line" data-collapsed="false"></div>
+              <div class="divider-notch"></div>
+            </div>
+            <div class="number text-white">04</div>
+          </div>
+          <div class="project-title text-white">
+            Cloe
+          </div>
+          <div class="project-description max-w-[59%]">
+            <p>
+              A bot website created for a commission, it is also one of the best websites i've ever created
+            </p>
+          </div>
+          <a class="project-button mt-[14px] hover:scale-105" href="https://cloe.gg" rel="noopener noreferrer"
+            target="_blank"><span class="project-button-text"><i class="fa-solid fa-arrow-up-right-from-square"></i>
+              View</span></a>
+        </div>
+        <img class="w-full rounded-[5px] project-image lsc" style="cursor:pointer;" src="/assets/img/cloe.png"
+          alt="project image">
+      </div>
+    </section>
+    <section class="right">
+      <div
+        class="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6 relative">
+        <img class="w-full rounded-[5px] project-image" style="cursor:pointer;" src="/assets/img/chat.PNG"
+          alt="project image">
+        <div class="mt-4 md:mt-0 flex justify-end flex-col text-right project-content items-end">
+          <div class="project-overline flex justify-end gap-[71px]">
+            <div class="divider">
+              <div class="divider-line" data-collapsed="false"></div>
+              <div class="divider-notch"></div>
+            </div>
+            <div class="number text-white">05</div>
+          </div>
+          <div class="project-title text-white">
+            Pop Chat
+          </div>
+          <div class="project-description max-w-[48%]">
+            <p>An online chatting website with a beautiful UI and the ability to create your own chat rooms! Made
+              originally for a hackathon.</p>
+          </div>
+          <a class="project-button mt-[14px] hover:scale-105" href="https://chat.popcat.xyz" rel="noopener noreferrer"
+            target="_blank"><span class="project-button-text"><i class="fa-solid fa-arrow-up-right-from-square"></i>
+              View</span></a>
+        </div>
+      </div>
+    </section>
+    <section class="left">
+      <div
+        class="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6 relative">
+        <div class="mt-4 md:mt-0 flex justify-end flex-col text-left project-content items-start">
+          <div class="project-overline flex justify-end gap-[71px]">
+            <div class="divider">
+              <div class="divider-line" data-collapsed="false"></div>
+              <div class="divider-notch"></div>
+            </div>
+            <div class="number text-white">06</div>
+          </div>
+          <div class="project-title text-white">
+            URL Shortener
+          </div>
+          <div class="project-description max-w-[59%]">
+            <p>
+              A simple, easy to use URL shortener with statistics on the number of clicks on your endpoint
+            </p>
+          </div>
+          <a class="project-button mt-[14px] hover:scale-105" href="https://url.popcat.xyz" rel="noopener noreferrer"
+            target="_blank"><span class="project-button-text"><i class="fa-solid fa-arrow-up-right-from-square"></i>
+              View</span></a>
+        </div>
+        <img class="w-full rounded-[5px] project-image lsc" style="cursor:pointer;" src="/assets/img/url.PNG"
+          alt="project image">
+      </div>
+    </section>
+    </div>
+    <h4 class="about-title c-white">Other Projects</h4>
+    <div class="other-projects flex items-center justify-center flex-wrap max-w-[71%]">
+      <div class="card">
+        <div class="card-content">
+          <h3 class="card-heading">Pop Cat Wrapper</h3>
+          <p class="card-description">An NPM Package To Make Your Life Easier While Using The Pop Cat API!</p>
+          <div class="buttons">
+            <button onclick="window.open('https://npmjs.com/popcat-wrapper', '_blank')"
+              class="card-button">Visit&nbsp;<i class="fa-solid fa-arrow-up-right-from-square"></i></button>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-content">
+          <h3 class="card-heading">TODO List</h3>
+          <p class="card-description">An Online Todo List with option to save your tasks on one device only and a Login system to save them globally!</p>
+          <div class="buttons">
+            <button onclick="window.open('https://popcat.xyz/todo', '_blank')"
+              class="card-button">Visit&nbsp;<i class="fa-solid fa-arrow-up-right-from-square"></i></button>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-content">
+          <h3 class="card-heading">YouTube Downloader</h3>
+          <p class="card-description">A simple and easy to use YouTube Video Downloader tool!</p>
+          <div class="buttons">
+            <button onclick="window.open('https://popcat.xyz/youtube-downloader', '_blank')"
+            class="card-button">Visit&nbsp;<i class="fa-solid fa-arrow-up-right-from-square"></i></button>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-content">
+          <h3 class="card-heading">Chatbot</h3>
+          <p class="card-description">An online chatbot ui based on brainshop.ai api</p>
+          <div class="buttons">
+            <button onclick="window.open('https://popcat.xyz/chat', '_blank')"
+              class="card-button">Visit&nbsp;<i class="fa-solid fa-arrow-up-right-from-square"></i></button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="card-content">
+          <h3 class="card-heading">Code Bin</h3>
+          <p class="card-description">Store and Access your codes on the cloud</p>
+          <div class="buttons">
+            <button onclick="window.open('https://code.popcat.xyz', '_blank')"
+              class="card-button">Visit&nbsp;<i class="fa-solid fa-arrow-up-right-from-square"></i></button>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
   <footer>
