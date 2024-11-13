@@ -1,0 +1,2 @@
+RewriteEngine On  
+RewriteRule ^bot$ bot.html [L]  
