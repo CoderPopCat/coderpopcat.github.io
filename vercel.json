@@ -1,0 +1,13 @@
+{  
+    "version": 2,  
+    "routes": [  
+        {  
+            "src": "/main",  
+            "dest": "/index.html"  
+        },  
+        {  
+            "src": "/tos",  
+            "dest": "/tos.html"  
+        } 
+    ]  
+}
