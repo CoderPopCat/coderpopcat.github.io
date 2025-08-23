@@ -9,6 +9,11 @@
 }
 
 @font-face {
+  font-family: PowerGrotesk;
+  src: url(../fonts/PowerGrotesk.ttf);
+}
+
+@font-face {
   font-family: 'Monument';
   src: url("/assets/fonts/MonumentExtended-Regular.woff2") format('woff2');
   font-weight: 500;
@@ -820,4 +825,75 @@ footer {
   height: 8px;
   top: 2px;
   left: -1px;
+}
+
+.pj-card {
+    padding: 24px;
+    border-radius: 16px;
+    box-shadow: 0 0 12px rgb(255 255 255 / 12%);
+    background: #080809;
+    border: 1px solid #333;
+    text-align: left;
+    margin: 15px 20px;
+    transition: border 0.3s ease, transform 0.3s ease;
+}
+
+.pj-card-button i {
+    color: black !important;
+}
+
+.pj-card:hover {
+    border: 1px solid #007CF0;
+    cursor: pointer;
+    transform: scale(1.1)
+}
+
+.pj-card-content {
+    display: flex;
+    justify-content: space-evenly;
+    min-height: 100%;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+.pj-card-heading {
+    font-size: 3rem;
+    font-weight: 400;
+    color: #fff;
+    font-family: PowerGrotesk, sans-serif !important
+}
+
+.pj-card-description {
+    font-size: 16px;
+    color: #fff;
+    line-height: 1.6;
+}
+
+.buttons {
+    display: flex;
+}
+
+.pj-card-button {
+    cursor: pointer;
+    background: white;
+    color: #000000;
+    font-family: PowerGrotesk;
+    padding: 0.5rem;
+    width: 8rem;
+    border-radius: 5px;
+    font-size: 22px;
+    height: max-content;
+    transition: all 0.7s ease-in-out;
+}
+
+.ftcontent {
+    flex-basis: fit-content !important;
+}
+
+.pj-card-button:hover {
+    color: black;
+    background-image: linear-gradient(90deg, #FF4D4D, #F9CB28);
 }
