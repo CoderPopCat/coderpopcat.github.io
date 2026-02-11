@@ -270,20 +270,63 @@ body {
 }
 
 .about {
-  background-color: #000;
+  border-top: 1px solid #ffffff28;
+  border-left: 1px solid #ffffff28;
+  border-right: 1px solid #ffffff28;
+  background-color: #000000;
+  color: white;
   z-index: 2;
+  border-top-left-radius: 1.5rem;
+  border-top-right-radius: 1.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 5% 5%;
+  padding: 4% 4%;
   padding-left: 24px;
   padding-right: 24px;
   min-height: max-content;
 }
 
+.about h4,
+.projects h4 {
+  line-height: 7.3rem;
+  text-transform: uppercase;
+  font-family: 'PowerGrotesk';
+  font-size: 5.8rem;
+  text-align: left;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  width: max-content;
+}
+
+.slash {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.purple {
+  background-image: linear-gradient(-90deg, #7928CA, #ff0080);
+}
+
+.cyan {
+  background-image: linear-gradient(-45deg, #00DFD8, #007CF0);
+}
+
+.gold {
+  background-image: linear-gradient(90deg, #FF4D4D, #F9CB28);
+}
+
+.about p.grey {
+  text-align: left;
+  margin-top: 3px;
+  line-height: 1.6;
+  font-weight: 500;
+  font-size: 24px;
+}
+
 .about-content {
-  margin-top: 30px;
   max-width: 71%;
 }
 
@@ -320,8 +363,8 @@ body {
   color: white;
   box-sizing: border-box;
   background: #000;
-  border-top: 1px solid #333;
-  border-bottom: 1px solid #333;
+  border-top: 1px solid #ffffff28;
+  border-bottom: 1px solid #ffffff28;
 }
 
 .statistics {
@@ -351,7 +394,7 @@ body {
 }
 
 .stats-item {
-  border-right: 1px solid #333;
+  border-right: 1px solid #ffffff28;
   padding: 0 33px;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
@@ -437,7 +480,7 @@ body {
   box-shadow: 0 0 14px rgb(255 255 255 / 12%);
   max-width: 260px;
   background: #000;
-  border: 1px solid #333;
+  border: 1px solid #ffffff28;
   margin: 30px 20px;
   transition: border 0.3s ease, transform 0.3s ease;
 }
@@ -593,6 +636,10 @@ body {
     text-align: center
   }
 
+  .about h4, .projects h4 {
+    font-size: 3rem !important;
+  }
+
   .about img {
     width: 250px;
   }
@@ -607,7 +654,7 @@ body {
 
   .stats-item {
     border-right: none;
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid #ffffff28;
     padding: 12px 33px;
   }
 
@@ -650,9 +697,13 @@ footer {
   height: max-content;
   width: 100vw;
   font-family: Inter, sans-serif;
-  padding: 30px;
+  padding: 35px;
   color: #fff;
-  border-top: 1px solid #333;
+  border-top: 1px solid #ffffff24;
+}
+
+.footer-content h2 span {
+  font-family: PowerGrotesk, sans-serif !important;
 }
 
 .footer-content {
@@ -663,7 +714,7 @@ footer {
   text-align: center;
 }
 
-.footer-content h3 {
+.footer-content h2 {
   font-size: 1.8rem;
   font-weight: 400;
   text-transform: capitalize;
@@ -676,6 +727,7 @@ footer {
   line-height: 28px;
   font-size: 14px;
 }
+
 
 #movie-bg {
   position: fixed;
@@ -828,72 +880,72 @@ footer {
 }
 
 .pj-card {
-    padding: 24px;
-    border-radius: 16px;
-    box-shadow: 0 0 12px rgb(255 255 255 / 12%);
-    background: #080809;
-    border: 1px solid #333;
-    text-align: left;
-    margin: 15px 20px;
-    transition: border 0.3s ease, transform 0.3s ease;
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 0 12px rgb(255 255 255 / 12%);
+  background: #000;
+  border: 1px solid #ffffff28;
+  text-align: left;
+  margin: 15px 20px;
+  transition: border 0.3s ease, transform 0.3s ease;
 }
 
 .pj-card-button i {
-    color: black !important;
+  color: black !important;
 }
 
 .pj-card:hover {
-    border: 1px solid #007CF0;
-    cursor: pointer;
-    transform: scale(1.1)
+  border: 1px solid #007CF0;
+  cursor: pointer;
+  transform: scale(1.1)
 }
 
 .pj-card-content {
-    display: flex;
-    justify-content: space-evenly;
-    min-height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  min-height: 100%;
 }
 
 .card img {
-    width: 100%;
-    border-radius: 15px;
+  width: 100%;
+  border-radius: 15px;
 }
 
 .pj-card-heading {
-    font-size: 3rem;
-    font-weight: 400;
-    color: #fff;
-    font-family: PowerGrotesk, sans-serif !important
+  font-size: 3rem;
+  font-weight: 400;
+  color: #fff;
+  font-family: PowerGrotesk, sans-serif !important
 }
 
 .pj-card-description {
-    font-size: 16px;
-    color: #fff;
-    line-height: 1.6;
+  font-size: 16px;
+  color: #fff;
+  line-height: 1.6;
 }
 
 .buttons {
-    display: flex;
+  display: flex;
 }
 
 .pj-card-button {
-    cursor: pointer;
-    background: white;
-    color: #000000;
-    font-family: PowerGrotesk;
-    padding: 0.5rem;
-    width: 8rem;
-    border-radius: 5px;
-    font-size: 22px;
-    height: max-content;
-    transition: all 0.7s ease-in-out;
+  cursor: pointer;
+  background: white;
+  color: #000000;
+  font-family: PowerGrotesk;
+  padding: 0.5rem;
+  width: 8rem;
+  border-radius: 5px;
+  font-size: 22px;
+  height: max-content;
+  transition: all 0.7s ease-in-out;
 }
 
 .ftcontent {
-    flex-basis: fit-content !important;
+  flex-basis: fit-content !important;
 }
 
 .pj-card-button:hover {
-    color: black;
-    background-image: linear-gradient(90deg, #FF4D4D, #F9CB28);
+  color: black;
+  background-image: linear-gradient(90deg, #FF4D4D, #F9CB28);
 }

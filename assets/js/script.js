@@ -44,7 +44,7 @@ const ops = { interval: 100 }
 
 sr.reveal('.head, .paragraph, .hero-button', ops);
 sr.reveal('.icon', ops);
-sr.reveal(".about-title, .about-img, .about-text, .about-description.grey", ops);
+sr.reveal(".about-title, .about h4, .projects h4, .about-img, .about-text, .about-description.grey", ops);
 sr.reveal('.stats-item', ops);
 sr.reveal('.card', { interval: 100, delay: 50 })
 // Project Right

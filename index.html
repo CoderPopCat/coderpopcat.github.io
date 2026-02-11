@@ -72,24 +72,25 @@
       <h1 class="shine head">Zero Two.</h1>
       <p class="paragraph">Frontend & Backend Developer.</p>
       <button class="hero-button nav-link" data-scroll="#projects">Projects</button>
-    </div> 
+    </div>
   </div>
   <section id="about" class="about">
-    <span class="line"></span>
+    <!-- <span class="line"></span> -->
     <div>
-      <div class="section-label">
+      <!-- <div class="section-label">
         <div class="label-number project-label">1</div>
-      </div>
+      </div> -->
       <div class="w-[100vw] flex justify-center items-center">
         <div class="about-content d-flex align-center space-between row">
-          <div class="about-img">
-            <canvas id="canvas"></canvas>
-          </div>
+
           <div class="about-text">
-            <h4 class="about-title c-white">About Me</h4>
-            <p class="about-description grey">I am a Full Stack Developer and a computer enthusiast. I have a good
+            <h4 class="c-white">About Me&nbsp;<span class="slash purple">/</span></h4>
+            <p class="grey">I am a Full Stack Developer and a computer enthusiast.<br> I have a good
               knowledge
               of HTML, CSS, Javascript, Nodejs, Reactjs, MongoDB, Git, and more.</p>
+          </div>
+          <div class="about-img">
+            <canvas id="canvas"></canvas>
           </div>
         </div>
       </div>
@@ -118,11 +119,12 @@
     </section>
   </div>
   <section id="projects" class="projects">
-    <span class="line" style="background: linear-gradient(-45deg,  #007CF0, #000)"></span>
+    <!-- <span class="line" style="background: linear-gradient(-45deg,  #007CF0, #000)"></span>
     <div class="section-label">
       <div class="label-number">2</div>
-    </div>
-    <h4 class="about-title c-white">Projects</h4>
+    </div> -->
+    <h4 class="c-white">Projects&nbsp;<span class="slash cyan">/</span></h4>
+
     <p class="about-description grey" style="font-size: 18px;">Projects I've Made :)</p>
     <section class="right">
       <div
@@ -195,10 +197,12 @@
             Country Searcher
           </div>
           <div class="project-description max-w-[40%]">
-            <p>A website with a list of countries, offering detailed information on selected nations and the ability to calculate distances between any two countries.</p>
+            <p>A website with a list of countries, offering detailed information on selected nations and the ability to
+              calculate distances between any two countries.</p>
           </div>
-          <a class="project-button mt-[14px] hover:scale-105" href="https://countries.popcat.xyz" rel="noopener noreferrer"
-            target="_blank"><span class="project-button-text"><i class="fa-solid fa-arrow-up-right-from-square"></i>
+          <a class="project-button mt-[14px] hover:scale-105" href="https://countries.popcat.xyz"
+            rel="noopener noreferrer" target="_blank"><span class="project-button-text"><i
+                class="fa-solid fa-arrow-up-right-from-square"></i>
               View</span></a>
         </div>
       </div>
@@ -222,8 +226,9 @@
               Easy to use, open source Instagram data package explorer with a beautiful UI.
             </p>
           </div>
-          <a class="project-button mt-[14px] hover:scale-105" href="https://instawrapped.popcat.xyz" rel="noopener noreferrer"
-            target="_blank"><span class="project-button-text"><i class="fa-solid fa-arrow-up-right-from-square"></i>
+          <a class="project-button mt-[14px] hover:scale-105" href="https://instawrapped.popcat.xyz"
+            rel="noopener noreferrer" target="_blank"><span class="project-button-text"><i
+                class="fa-solid fa-arrow-up-right-from-square"></i>
               View</span></a>
         </div>
         <img class="w-full rounded-[5px] project-image lsc" style="cursor:pointer;" src="/assets/img/instawrapped.png"
@@ -284,68 +289,73 @@
       </div>
     </section>
     </div>
-    <h4 class="about-title c-white">Other Projects</h4>
-   <div class="other-projects block m-auto max-w-[71%]">
-            <div class="flex flex-col lg:flex-row">
-                <div class="flex flex-col ftcontent">
-                    <div class="flex flex-col lg:flex-row justify-between items-center">
-                        <div class="pj-card lg:w-[65%]" style="visibility: visible;">
-                            <div class="pj-card-content flex-col lg:flex-row justify-between items-start lg:items-center">
-                                <div>
-                                    <h3 class="pj-card-heading">Pop Cat Wrapper</h3>
-                                    <p class="pj-card-description">An NPM Package To Make Your Life Easier While Using
-                                        The
-                                        Pop Cat API!</p>
-                                </div>
-                                <div class="buttons mt-[1rem] lg:mt-0">
-                                    <button onclick="window.open('https://npmjs.com/popcat-wrapper', '_blank')" class="pj-card-button">Visit&nbsp;<i class="fa-solid fa-arrow-up-right-from-square"></i></button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="pj-card lg:w-[35%]" style="visibility: visible;">
-                            <div class="pj-card-content flex-col">
-                                <h3 class="pj-card-heading">Code Bin</h3>
-                                <p class="pj-card-description">Pastebin with custom themes and syntax highlighting options!</p>
-                                <div class="buttons mt-[1rem]">
-                                    <button onclick="window.open('https://code.popcat.xyz', '_blank')" class="pj-card-button">Visit&nbsp;<i class="fa-solid fa-arrow-up-right-from-square"></i></button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flex flex-col lg:flex-row">
-                        <div class="pj-card lg:w-[35%]" style="visibility: visible;">
-                            <div class="pj-card-content flex-col">
-                                <h3 class="pj-card-heading">TODO List</h3>
-                                <p class="pj-card-description">An Online Todo List with option to save your tasks on one
-                                    device only, and a
-                                    Login
-                                    system to save them globally!</p>
-                                <div class="buttons mt-[1rem]">
-                                    <button onclick="window.open('https://popcat.xyz/todo', '_blank')" class="pj-card-button">Visit&nbsp;<i class="fa-solid fa-arrow-up-right-from-square"></i></button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="pj-card lg:w-[65%]" style="visibility: visible;">
-                            <div class="pj-card-content flex-col">
-                                <h3 class="pj-card-heading text-[1.7rem] lg:text-[3rem]">Mystiq Dashboard</h3>
-                                <p class="pj-card-description">A fully functional and easy to use Discord Bot Dashboard
-                                    with a beautiful UI!
-                                </p>
-                                <div class="buttons mt-[1rem]">
-                                    <button onclick="window.open('https://dashboard.mystiq.fun', '_blank')" class="pj-card-button">Visit&nbsp;<i class="fa-solid fa-arrow-up-right-from-square"></i></button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+    <h4 class="c-white">Other Projects&nbsp;<span class="slash gold">/</span></h4>
+
+    <div class="other-projects block m-auto max-w-[71%]">
+      <div class="flex flex-col lg:flex-row">
+        <div class="flex flex-col ftcontent">
+          <div class="flex flex-col lg:flex-row justify-between items-center">
+            <div class="pj-card lg:w-[65%]" style="visibility: visible;">
+              <div class="pj-card-content flex-col lg:flex-row justify-between items-start lg:items-center">
+                <div>
+                  <h3 class="pj-card-heading">Pop Cat Wrapper</h3>
+                  <p class="pj-card-description">An NPM Package To Make Your Life Easier While Using
+                    The
+                    Pop Cat API!</p>
                 </div>
-
-
+                <div class="buttons mt-[1rem] lg:mt-0">
+                  <button onclick="window.open('https://npmjs.com/popcat-wrapper', '_blank')"
+                    class="pj-card-button">Visit&nbsp;<i class="fa-solid fa-arrow-up-right-from-square"></i></button>
+                </div>
+              </div>
             </div>
+            <div class="pj-card lg:w-[35%]" style="visibility: visible;">
+              <div class="pj-card-content flex-col">
+                <h3 class="pj-card-heading">Code Bin</h3>
+                <p class="pj-card-description">Pastebin with custom themes and syntax highlighting options!</p>
+                <div class="buttons mt-[1rem]">
+                  <button onclick="window.open('https://code.popcat.xyz', '_blank')"
+                    class="pj-card-button">Visit&nbsp;<i class="fa-solid fa-arrow-up-right-from-square"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-col lg:flex-row">
+            <div class="pj-card lg:w-[35%]" style="visibility: visible;">
+              <div class="pj-card-content flex-col">
+                <h3 class="pj-card-heading">TODO List</h3>
+                <p class="pj-card-description">An Online Todo List with option to save your tasks on one
+                  device only, and a
+                  Login
+                  system to save them globally!</p>
+                <div class="buttons mt-[1rem]">
+                  <button onclick="window.open('https://popcat.xyz/todo', '_blank')"
+                    class="pj-card-button">Visit&nbsp;<i class="fa-solid fa-arrow-up-right-from-square"></i></button>
+                </div>
+              </div>
+            </div>
+            <div class="pj-card lg:w-[65%]" style="visibility: visible;">
+              <div class="pj-card-content flex-col">
+                <h3 class="pj-card-heading text-[1.7rem] lg:text-[3rem]">Mystiq Dashboard</h3>
+                <p class="pj-card-description">A fully functional and easy to use Discord Bot Dashboard
+                  with a beautiful UI!
+                </p>
+                <div class="buttons mt-[1rem]">
+                  <button onclick="window.open('https://dashboard.mystiq.fun', '_blank')"
+                    class="pj-card-button">Visit&nbsp;<i class="fa-solid fa-arrow-up-right-from-square"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+
+
+      </div>
+    </div>
   </section>
   <footer>
     <div class="footer-content">
-      <h3>Zero Two</h3>
+      <h2 class="text-4xl m-[0] p-0" style="font-family: PowerGrotesk">Zero <span class="shine">Two</span></h2>
       <p>Created and Managed by zerotwo._02</p>
     </div>
   </footer>
