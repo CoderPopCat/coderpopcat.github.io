@@ -1,23 +1,23 @@
-<!DOCTYPE html>
-<html>
+﻿<!DOCTYPE html>
+<html lang="en">
 
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zero Two | Portfolio</title>
   <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
-  <link rel="stylesheet" href="assets/css/util.css">
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <link rel="stylesheet" href="assets/css/navbar.css">
+  <link rel="preconnect" href="https://pro.fontawesome.com">
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta2/css/all.css" />
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
-  <!-- Website Meta Data -->
-  <meta name="theme-color" content="#36393e">
-  <meta name="msapplication-TileColor" content="#36393e">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="preconnect" href="https://unpkg.com">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700&display=swap" rel="stylesheet">
+  <meta name="theme-color" content="#11dbc0">
+  <meta name="msapplication-TileColor" content="#11dbc0">
   <meta name="title" content="Zero Two">
   <meta name="description"
-    content="The official portfolio of Zero Two#7177, showcasing my skills and projects that i've made">
+    content="The official portfolio of zerotwo._02, showcasing my skills and projects that i've made">
   <meta name="keywords"
     content="developer, zero two, freelance developer, programming, pop cat, pop cat api, pop cat discord bot">
   <meta name="language" content="English">
@@ -26,375 +26,482 @@
   <meta property="og:url" content="https://zero.is-a.dev">
   <meta property="og:title" content="Zero Two">
   <meta property="og:description"
-    content="The official portfolio of Zero Two#7177, showcasing my skills and projects that i've made">
-  <meta property="og:image" content="https://zero.is-a.dev/assets/img/website.png">
+    content="The official portfolio of zerotwo._02, showcasing my skills and projects that i've made">
+  <meta property="og:image" content="https://zero.is-a.dev/assets/img/meta.png">
   <meta property="twitter:card" content="summary_large_image">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Website Meta Data End -->
 </head>
 
 <body>
-  <nav id='nav' style="width: 100vw; backdrop-filter: blur(5px); box-shadow: inset 0 -1px 0 0 hsla(0,0%,100%,0.1)">
-    <div class="nav-container-custom nav-wrapper">
-      <div class="brand">
-        <span>
-          <strong class="shine" style="color: white; font-family: monospace; font-size: 30px">Portfolio</strong>
-        </span>
-      </div>
-      <div class="hamburger" style="padding-left: 23px;">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      <ul class="nav-list">
-        <li><a class="nav-link" data-scroll="#content-home">Home</a></li>
-        <li><a class="nav-link" data-scroll="#about">About</a></li>
-        <li><a class="nav-link" target="_blank" data-scroll="#projects">Projects</a> </li>
-        <li><a class="nav-link" target="_blank" style="color: #007CF0" href="https://ko-fi.com/popcatdev">Donate</a>
-        </li>
-      </ul>
+  <div class="overlay">
+    <div class="loader-counter" id="loaderCounter" aria-hidden="true">
+      <h1 class="loader-counter-value"><span id="loaderCounterValue">00</span><span class="loader-counter-total">/100</span></h1>
     </div>
-  </nav>
-
-  <div class="content" id="content-home">
-    <div class="social">
-      <a href="https://popcat.xyz/server" id="discord" target="_blank" class="icon">
-        <i class="fab fa-discord"></i>
-      </a>
-      <a href="https://www.instagram.com/sharanpreet._.s" id="instagram" target="_blank" class="icon">
-        <i class="fab fa-instagram"></i>
-      </a>
-      <a href="https://github.com/CoderPopCat" id="github" target="_blank" class="icon">
-        <i class="fab fa-github"></i>
-      </a>
-    </div>
-    <div class="text">
-      <h1 class="shine head">Zero Two.</h1>
-      <p class="paragraph">Frontend & Backend Developer.</p>
-      <button class="hero-button nav-link" data-scroll="#projects">Projects</button>
-    </div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
   </div>
-  <section id="about" class="about">
-    <!-- <span class="line"></span> -->
-    <div>
-      <!-- <div class="section-label">
-        <div class="label-number project-label">1</div>
-      </div> -->
-      <div class="w-[100vw] flex justify-center items-center">
-        <div class="about-content d-flex align-center space-between row">
-
-          <div class="about-text">
-            <h4 class="c-white">About Me&nbsp;<span class="slash purple">/</span></h4>
-            <p class="grey">I am a Full Stack Developer and a computer enthusiast.<br> I have a good
-              knowledge
-              of HTML, CSS, Javascript, Nodejs, Reactjs, MongoDB, Git, and more.</p>
-          </div>
-          <div class="about-img">
-            <canvas id="canvas"></canvas>
-          </div>
-        </div>
-      </div>
-  </section>
-  <div class="stats">
-
-    <section class="statistics">
-      <div class="stats-container">
-        <div class="stats-item">
-          <p data-purecounter-start="0" data-purecounter-end="12" class="highlight purecounter">12</p><span
-            class="stats-description">Projects Delivered</span>
-        </div>
-        <div class="stats-item">
-          <p class="highlight">$<span data-purecounter-start="0" data-purecounter-end="816"
-              class="highlight purecounter">816</span></p><span class="stats-description">Community Support</span>
-        </div>
-        <div class="stats-item">
-          <p data-purecounter-start="0" data-purecounter-end="7" class="highlight purecounter">7</p><span
-            class="stats-description">Areas of Knowledge</span>
-        </div>
-        <div class="stats-item" style="border: none;">
-          <p data-purecounter-start="0" data-purecounter-end="" class="highlight purecounter" id="views-count"></p><span
-            class="stats-description">Portfolio Visitors</span>
-        </div>
-      </div>
-    </section>
-  </div>
-  <section id="projects" class="projects">
-    <!-- <span class="line" style="background: linear-gradient(-45deg,  #007CF0, #000)"></span>
-    <div class="section-label">
-      <div class="label-number">2</div>
-    </div> -->
-    <h4 class="c-white">Projects&nbsp;<span class="slash cyan">/</span></h4>
-
-    <p class="about-description grey" style="font-size: 18px;">Projects I've Made :)</p>
-    <section class="right">
-      <div
-        class="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6 relative">
-        <img class="w-full rounded-[5px] project-image" style="cursor:pointer;" src="/assets/img/1cawOf2VHMHs.png"
-          alt="project image">
-        <div class="mt-4 md:mt-0 flex justify-end flex-col text-right project-content items-end">
-          <div class="project-overline flex justify-end gap-[71px]">
-            <div class="divider">
-              <div class="divider-line" data-collapsed="false"></div>
-              <div class="divider-notch"></div>
-            </div>
-            <div class="number text-white">01</div>
-          </div>
-          <div class="project-title text-white">
-            Pop Cat Bot
-          </div>
-          <div class="project-description max-w-[84%]">
-            <p>A cool multipurpose <a href="https://discord.com" class="text-[#7289da]">Discord</a> bot with a lot of
-              commands and functionality.</p>
-          </div>
-          <a class="project-button mt-[14px] hover:scale-105"
-            href="https://discord.com/oauth2/authorize?client_id=804341143092985886&permissions=2483341366&scope=bot%20applications.commands"
-            rel="noopener noreferrer" target="_blank"><span class="project-button-text"><i class="fab fa-discord"></i>
-              Invite</span></a>
-        </div>
-      </div>
-    </section>
-    <section class="left">
-      <div
-        class="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6 relative">
-        <div class="mt-4 md:mt-0 flex justify-end flex-col text-left project-content items-start">
-          <div class="project-overline flex justify-end gap-[71px]">
-            <div class="divider">
-              <div class="divider-line" data-collapsed="false"></div>
-              <div class="divider-notch"></div>
-            </div>
-            <div class="number text-white">02</div>
-          </div>
-          <div class="project-title text-white">
-            Pop Cat API
-          </div>
-          <div class="project-description max-w-[68%]">
-            <p>
-              The Only API You'll Ever Need! Has Tons of Image Manipulation and Utility Endpoints!
-            </p>
-          </div>
-          <a class="project-button mt-[14px] hover:scale-105" href="https://popcat.xyz/api" rel="noopener noreferrer"
-            target="_blank"><span class="project-button-text"><i class="fa-solid fa-arrow-up-right-from-square"></i>
-              View</span></a>
-        </div>
-        <img class="w-full rounded-[5px] project-image lsc" style="cursor:pointer;" src="/assets/img/apibig.png"
-          alt="project image">
-      </div>
-    </section>
-    <section class="right">
-      <div
-        class="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6 relative">
-        <img class="w-full rounded-[5px] project-image country-image" style="cursor:pointer;"
-          src="/assets/img/country1.png" alt="project image">
-        <div class="mt-4 md:mt-0 flex justify-end flex-col text-right project-content items-end">
-          <div class="project-overline flex justify-end gap-[71px]">
-            <div class="divider">
-              <div class="divider-line" data-collapsed="false"></div>
-              <div class="divider-notch"></div>
-            </div>
-            <div class="number text-white">03</div>
-          </div>
-          <div class="project-title text-white">
-            Country Searcher
-          </div>
-          <div class="project-description max-w-[40%]">
-            <p>A website with a list of countries, offering detailed information on selected nations and the ability to
-              calculate distances between any two countries.</p>
-          </div>
-          <a class="project-button mt-[14px] hover:scale-105" href="https://countries.popcat.xyz"
-            rel="noopener noreferrer" target="_blank"><span class="project-button-text"><i
-                class="fa-solid fa-arrow-up-right-from-square"></i>
-              View</span></a>
-        </div>
-      </div>
-    </section>
-    <section class="left">
-      <div
-        class="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6 relative">
-        <div class="mt-4 md:mt-0 flex justify-end flex-col text-left project-content items-start">
-          <div class="project-overline flex justify-end gap-[71px]">
-            <div class="divider">
-              <div class="divider-line" data-collapsed="false"></div>
-              <div class="divider-notch"></div>
-            </div>
-            <div class="number text-white">04</div>
-          </div>
-          <div class="project-title text-white">
-            InstaWrapped
-          </div>
-          <div class="project-description max-w-[70%]">
-            <p>
-              Easy to use, open source Instagram data package explorer with a beautiful UI.
-            </p>
-          </div>
-          <a class="project-button mt-[14px] hover:scale-105" href="https://instawrapped.popcat.xyz"
-            rel="noopener noreferrer" target="_blank"><span class="project-button-text"><i
-                class="fa-solid fa-arrow-up-right-from-square"></i>
-              View</span></a>
-        </div>
-        <img class="w-full rounded-[5px] project-image lsc" style="cursor:pointer;" src="/assets/img/instawrapped.png"
-          alt="project image">
-      </div>
-    </section>
-    <section class="right">
-      <div
-        class="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6 relative">
-        <img class="w-full rounded-[5px] project-image" style="cursor:pointer;" src="/assets/img/chat.PNG"
-          alt="project image">
-        <div class="mt-4 md:mt-0 flex justify-end flex-col text-right project-content items-end">
-          <div class="project-overline flex justify-end gap-[71px]">
-            <div class="divider">
-              <div class="divider-line" data-collapsed="false"></div>
-              <div class="divider-notch"></div>
-            </div>
-            <div class="number text-white">05</div>
-          </div>
-          <div class="project-title text-white">
-            Pop Chat
-          </div>
-          <div class="project-description max-w-[48%]">
-            <p>An online chatting website with a beautiful UI and the ability to create your own chat rooms! Made
-              originally for a hackathon.</p>
-          </div>
-          <a class="project-button mt-[14px] hover:scale-105" href="https://chat.popcat.xyz" rel="noopener noreferrer"
-            target="_blank"><span class="project-button-text"><i class="fa-solid fa-arrow-up-right-from-square"></i>
-              View</span></a>
-        </div>
-      </div>
-    </section>
-    <section class="left">
-      <div
-        class="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6 relative">
-        <div class="mt-4 md:mt-0 flex justify-end flex-col text-left project-content items-start">
-          <div class="project-overline flex justify-end gap-[71px]">
-            <div class="divider">
-              <div class="divider-line" data-collapsed="false"></div>
-              <div class="divider-notch"></div>
-            </div>
-            <div class="number text-white">06</div>
-          </div>
-          <div class="project-title text-white">
-            URL Shortener
-          </div>
-          <div class="project-description max-w-[59%]">
-            <p>
-              A simple, easy to use URL shortener with statistics on the number of clicks on your endpoint
-            </p>
-          </div>
-          <a class="project-button mt-[14px] hover:scale-105" href="https://url.popcat.xyz" rel="noopener noreferrer"
-            target="_blank"><span class="project-button-text"><i class="fa-solid fa-arrow-up-right-from-square"></i>
-              View</span></a>
-        </div>
-        <img class="w-full rounded-[5px] project-image lsc" style="cursor:pointer;" src="/assets/img/url.PNG"
-          alt="project image">
-      </div>
-    </section>
+  <canvas id="glCanvas"></canvas>
+  <section class="hero" id="hero">
+    <div class="hero-paragraph">
+      <p class="hero-p animate-text">Building APIs and tools that power communities. Freelance
+        full-stack developer
+        crafting digital experiences that "wow" — from concept to code.</p>
     </div>
-    <h4 class="c-white">Other Projects&nbsp;<span class="slash gold">/</span></h4>
+    <div class="hero-content">
+      <h1 class="animate-text">ZERO TWO.</h1>
+      <div class="hero-divider"></div>
+      <div class="hero-actions">
+        <button>
+          <span>Projects</span>
+          <i class="fa-regular fa-diagram-project"></i>
+        </button>
+        <div class="animate-text hero-actions-nav">
+          <a href="#about">
+            ABOUT
+          </a>
 
-    <div class="other-projects block m-auto max-w-[71%]">
-      <div class="flex flex-col lg:flex-row">
-        <div class="flex flex-col ftcontent">
-          <div class="flex flex-col lg:flex-row justify-between items-center">
-            <div class="pj-card lg:w-[65%]" style="visibility: visible;">
-              <div class="pj-card-content flex-col lg:flex-row justify-between items-start lg:items-center">
-                <div>
-                  <h3 class="pj-card-heading">Pop Cat Wrapper</h3>
-                  <p class="pj-card-description">An NPM Package To Make Your Life Easier While Using
-                    The
-                    Pop Cat API!</p>
-                </div>
-                <div class="buttons mt-[1rem] lg:mt-0">
-                  <button onclick="window.open('https://npmjs.com/popcat-wrapper', '_blank')"
-                    class="pj-card-button">Visit&nbsp;<i class="fa-solid fa-arrow-up-right-from-square"></i></button>
-                </div>
-              </div>
-            </div>
-            <div class="pj-card lg:w-[35%]" style="visibility: visible;">
-              <div class="pj-card-content flex-col">
-                <h3 class="pj-card-heading">Code Bin</h3>
-                <p class="pj-card-description">Pastebin with custom themes and syntax highlighting options!</p>
-                <div class="buttons mt-[1rem]">
-                  <button onclick="window.open('https://code.popcat.xyz', '_blank')"
-                    class="pj-card-button">Visit&nbsp;<i class="fa-solid fa-arrow-up-right-from-square"></i></button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="flex flex-col lg:flex-row">
-            <div class="pj-card lg:w-[35%]" style="visibility: visible;">
-              <div class="pj-card-content flex-col">
-                <h3 class="pj-card-heading">TODO List</h3>
-                <p class="pj-card-description">An Online Todo List with option to save your tasks on one
-                  device only, and a
-                  Login
-                  system to save them globally!</p>
-                <div class="buttons mt-[1rem]">
-                  <button onclick="window.open('https://popcat.xyz/todo', '_blank')"
-                    class="pj-card-button">Visit&nbsp;<i class="fa-solid fa-arrow-up-right-from-square"></i></button>
-                </div>
-              </div>
-            </div>
-            <div class="pj-card lg:w-[65%]" style="visibility: visible;">
-              <div class="pj-card-content flex-col">
-                <h3 class="pj-card-heading text-[1.7rem] lg:text-[3rem]">Mystiq Dashboard</h3>
-                <p class="pj-card-description">A fully functional and easy to use Discord Bot Dashboard
-                  with a beautiful UI!
-                </p>
-                <div class="buttons mt-[1rem]">
-                  <button onclick="window.open('https://dashboard.mystiq.fun', '_blank')"
-                    class="pj-card-button">Visit&nbsp;<i class="fa-solid fa-arrow-up-right-from-square"></i></button>
-                </div>
-              </div>
-            </div>
-          </div>
+          <span>/</span>
+
+          <a href="mailto:sharan.bharta@hotmail.com">
+            CONTACT
+          </a>
+
+          <span>/</span>
+
+          <a href="https://ko-fi.com/popcatdev" target="_blank" rel="noopener">
+            DONATE
+          </a>
         </div>
-
-
+        <div class="socials">
+          <a href="https://popcat.xyz/server" id="discord" target="_blank" class="icon">
+            <i class="fab fa-discord"></i>
+          </a>
+          <a href="https://www.instagram.com/sharanpreet._.s" id="instagram" target="_blank" class="icon">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://github.com/CoderPopCat" id="github" target="_blank" class="icon">
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
       </div>
     </div>
   </section>
-  <footer>
-    <div class="footer-content">
-      <h2 class="text-4xl m-[0] p-0" style="font-family: PowerGrotesk">Zero <span class="shine">Two</span></h2>
-      <p>Designed and built by zerotwo._02</p>
+
+  <section id="about">
+    <section class="about-reveal-section">
+      <div class="about-reveal-sticky">
+        <span class="section-eyebrow">About (01)</span>
+        <p class="about-reveal-text">Proficient full stack developer crafting high-impact digital experiences for
+          clients across the globe.</p>
+
+        <div class="about-bottom">
+          <div class="about-left">
+            <p class="about-content animate-line" data-anim-duration="2">
+              I'm <span class="hl">Sharanpreet</span> — a Full Stack Developer who builds things that <span
+                class="hl">people actually use</span>. From a Discord bot
+              serving <span class="highlight accent">300,000+ users</span> to a public API with <span
+                class="highlight accent">150M+ requests</span>, I care about shipping software
+              that scales and matters.
+            </p>
+            <p class="about-content animate-line" data-anim-duration="2">
+              Based in a world of <span class="accent">Node.js, React, Tailwind, GSAP</span> and <span
+                class="accent">MongoDB</span>, I work across the full stack — APIs, bots, websites,
+              dashboards, real-time apps. I'm obsessed with designs that stand out and experiences that <span
+                class="hl">just feel right</span>.
+            </p>
+          </div>
+
+          <div class="about-right-stats">
+            <div class="stat-row">
+              <p class="stat-row-number">12</p>
+              <div class="stat-row-content">
+                <h3 class="stat-row-title animate-text">Freelance Projects</h3>
+                <p class="stat-row-desc animate-line">Delivered 12 high quality Websites, Web Apps, Dashboards,
+                  Management Systems for high profile clients around the world.</p>
+              </div>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-row">
+              <p class="stat-row-number">$816</p>
+              <div class="stat-row-content">
+                <h3 class="stat-row-title animate-text">Community Support</h3>
+                <p class="stat-row-desc animate-line">Donations from some of the thousands happy users of my free-to-use
+                  projects at <a href="https://popcat.xyz" target="_blank" rel="noopener" class="highlight accent">Pop Cat Development</a></p>
+              </div>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-row">
+              <p class="stat-row-number">10+</p>
+              <div class="stat-row-content">
+                <h3 class="stat-row-title animate-text">Domains of Knowledge</h3>
+                <p class="stat-row-desc animate-line">Backend systems, UI animation, API architecture, community
+                  management — cross-domain thinking applied to every build.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </section>
+
+
+  <section class="marquee-section">
+    <div class="marquee-inner">
+      <div class="marquee-track" id="marqueeTrack" data-direction="ltr">
+        <span class="marquee-group"><span class="marquee-text">WEBSITES</span><img src="/assets/img/arrow.svg"
+            class="marquee-sep" aria-hidden="true"></span>
+        <span class="marquee-group"><span class="marquee-text">WEB APPS</span><img src="/assets/img/arrow.svg"
+            class="marquee-sep" aria-hidden="true"></span>
+        <span class="marquee-group"><span class="marquee-text">REST APIs</span><img src="/assets/img/arrow.svg"
+            class="marquee-sep" aria-hidden="true"></span>
+        <span class="marquee-group"><span class="marquee-text">DISCORD BOTS</span><img src="/assets/img/arrow.svg"
+            class="marquee-sep" aria-hidden="true"></span>
+        <span class="marquee-group"><span class="marquee-text">DASHBOARDS</span><img src="/assets/img/arrow.svg"
+            class="marquee-sep" aria-hidden="true"></span>
+        <span class="marquee-group"><span class="marquee-text">FULL STACK DEV</span><img src="/assets/img/arrow.svg"
+            class="marquee-sep" aria-hidden="true"></span>
+        <span class="marquee-group"><span class="marquee-text">NODE.JS</span><img src="/assets/img/arrow.svg"
+            class="marquee-sep" aria-hidden="true"></span>
+        <span class="marquee-group"><span class="marquee-text">REACT</span><img src="/assets/img/arrow.svg"
+            class="marquee-sep" aria-hidden="true"></span>
+        <span class="marquee-group"><span class="marquee-text">WEBSITES</span><img src="/assets/img/arrow.svg"
+            class="marquee-sep" aria-hidden="true"></span>
+        <span class="marquee-group"><span class="marquee-text">WEB APPS</span><img src="/assets/img/arrow.svg"
+            class="marquee-sep" aria-hidden="true"></span>
+        <span class="marquee-group"><span class="marquee-text">REST APIs</span><img src="/assets/img/arrow.svg"
+            class="marquee-sep" aria-hidden="true"></span>
+        <span class="marquee-group"><span class="marquee-text">DISCORD BOTS</span><img src="/assets/img/arrow.svg"
+            class="marquee-sep" aria-hidden="true"></span>
+        <span class="marquee-group"><span class="marquee-text">DASHBOARDS</span><img src="/assets/img/arrow.svg"
+            class="marquee-sep" aria-hidden="true"></span>
+        <span class="marquee-group"><span class="marquee-text">FULL STACK DEV</span><img src="/assets/img/arrow.svg"
+            class="marquee-sep" aria-hidden="true"></span>
+        <span class="marquee-group"><span class="marquee-text">NODE.JS</span><img src="/assets/img/arrow.svg"
+            class="marquee-sep" aria-hidden="true"></span>
+        <span class="marquee-group"><span class="marquee-text">REACT</span><img src="/assets/img/arrow.svg"
+            class="marquee-sep" aria-hidden="true"></span>
+      </div>
+    </div>
+  </section>
+  <section class="projects-section" id="projects">
+    <div class="projects-intro">
+      <div class="projects-intro-sticky">
+        <h2 class="projects-heading"><em>My</em> Projects</h2>
+        <p class="projects-desc">Building tools that people actually use — APIs, bots, dashboards, and web apps at
+          scale.</p>
+      </div>
+    </div>
+    <div class="works-progress-bar" id="worksProgressBar"></div>
+    <div class="projects-showcase">
+      <div class="projects-sticky" id="projectsSticky">
+
+        <div class="project-index" id="projectIndexEl">
+          <h1 class="index-h1" id="projectIndexH1">01<span class="index-total">/06</span></h1>
+        </div>
+
+        <div class="project-images" id="projectImages">
+
+          <div class="project-content">
+            <div class="project-img-wrap">
+              <img src="/assets/img/mockups/bot/1.webp" alt="Pop Cat Bot" loading="lazy" decoding="async">
+            </div>
+            <div class="project-header">
+              <div class="divider">
+                <div class="divider-line"></div>
+                <div class="divider-notch"></div>
+              </div>
+              <p class="project-overline">01</p>
+            </div>
+            <h3 class="project-title">Pop Cat Bot</h3>
+            <p class="project-description">A cool multipurpose Discord bot with a lot of commands and functionality.</p>
+            <a href="https://discord.com/oauth2/authorize?client_id=804341143092985886&permissions=2483341366&scope=bot%20applications.commands"
+              target="_blank" class="project-button">
+              <i class="fa-regular fa-arrow-up-right-from-square"></i> View
+            </a>
+          </div>
+
+          <div class="project-content">
+            <div class="project-img-wrap">
+              <img src="/assets/img/mockups/api/1.webp" alt="Pop Cat API" loading="lazy" decoding="async">
+            </div>
+            <div class="project-header">
+              <div class="divider">
+                <div class="divider-line"></div>
+                <div class="divider-notch"></div>
+              </div>
+              <p class="project-overline">02</p>
+            </div>
+            <h3 class="project-title">Pop Cat API</h3>
+            <p class="project-description">The Only API You'll Ever Need! Has Tons of Image Manipulation and Utility
+              Endpoints!</p>
+            <a href="https://popcat.xyz/api" target="_blank" class="project-button">
+              <i class="fa-regular fa-arrow-up-right-from-square"></i> View
+            </a>
+          </div>
+
+          <div class="project-content">
+            <div class="project-img-wrap">
+              <img src="/assets/img/mockups/codebin/1.webp" alt="Code Bin" loading="lazy" decoding="async">
+            </div>
+            <div class="project-header">
+              <div class="divider">
+                <div class="divider-line"></div>
+                <div class="divider-notch"></div>
+              </div>
+              <p class="project-overline">03</p>
+            </div>
+            <h3 class="project-title">Code Bin</h3>
+            <p class="project-description">A pastebin with themes and syntax highlighting for quick, shareable code
+              snippets.</p>
+            <a href="https://code.popcat.xyz" target="_blank" class="project-button">
+              <i class="fa-regular fa-arrow-up-right-from-square"></i> View
+            </a>
+          </div>
+
+          <div class="project-content">
+            <div class="project-img-wrap">
+              <img src="/assets/img/mockups/instawrapped/1.webp" alt="InstaWrapped" loading="lazy" decoding="async">
+            </div>
+            <div class="project-header">
+              <div class="divider">
+                <div class="divider-line"></div>
+                <div class="divider-notch"></div>
+              </div>
+              <p class="project-overline">04</p>
+            </div>
+            <h3 class="project-title">InstaWrapped</h3>
+            <p class="project-description">Easy to use, open source Instagram data package explorer with a beautiful UI.
+            </p>
+            <a href="https://instawrapped.popcat.xyz" target="_blank" class="project-button">
+              <i class="fa-regular fa-arrow-up-right-from-square"></i> View
+            </a>
+          </div>
+
+          <div class="project-content">
+            <div class="project-img-wrap">
+              <img src="/assets/img/mockups/chat/1.webp" alt="Pop Chat" loading="lazy" decoding="async">
+            </div>
+            <div class="project-header">
+              <div class="divider">
+                <div class="divider-line"></div>
+                <div class="divider-notch"></div>
+              </div>
+              <p class="project-overline">05</p>
+            </div>
+            <h3 class="project-title">Pop Chat</h3>
+            <p class="project-description">An online chatting website with a beautiful UI and the ability to create your
+              own chat rooms.</p>
+            <a href="https://chat.popcat.xyz" target="_blank" class="project-button">
+              <i class="fa-regular fa-arrow-up-right-from-square"></i> View
+            </a>
+          </div>
+
+          <div class="project-content">
+            <div class="project-img-wrap">
+              <img src="/assets/img/mockups/url/1.webp" alt="URL Shortener" loading="lazy" decoding="async">
+            </div>
+            <div class="project-header">
+              <div class="divider">
+                <div class="divider-line"></div>
+                <div class="divider-notch"></div>
+              </div>
+              <p class="project-overline">06</p>
+            </div>
+            <h3 class="project-title">URL Shortener</h3>
+            <p class="project-description">A simple, easy to use URL shortener with statistics on the number of clicks
+              on your endpoint.</p>
+            <a href="https://url.popcat.xyz" target="_blank" class="project-button">
+              <i class="fa-regular fa-arrow-up-right-from-square"></i> View
+            </a>
+          </div>
+
+        </div>
+
+        <div class="project-names" id="projectNames">
+          <p>Pop Cat Bot</p>
+          <p>Pop Cat API</p>
+          <p>Code Bin</p>
+          <p>InstaWrapped</p>
+          <p>Pop Chat</p>
+          <p>URL Shortener</p>
+        </div>
+
+      </div>
+    </div>
+    <div class="other-projects">
+      <h2 class="animate-text">Other Projects</h2>
+      <div class="op-list">
+
+      </div>
+    </div>
+    <div class="op-preview"></div>
+  </section>
+
+  <section class="testimonials-section" id="testimonialsSection">
+
+    <div class="testimonials-visual-col">
+      <div class="testimonials-visual-pin">
+
+        <div class="t-nav">
+          <div class="t-nav-arrows">
+            <button class="t-arrow" id="testimonialPrev" aria-label="Previous testimonial"><i
+                class="fa-regular fa-arrow-left"></i></button>
+            <button class="t-arrow" id="testimonialNext" aria-label="Next testimonial"><i
+                class="fa-regular fa-arrow-right"></i></button>
+          </div>
+          <span class="t-counter" id="testimonialCounter"></span>
+        </div>
+        <div class="t-progress" id="testimonialProgress"></div>
+
+        <p class="t-quote-main animate-line" id="testimonialQuote"></p>
+        <div class="t-person">
+          <span class="t-avatar" id="testimonialAvatar"></span>
+          <div>
+            <div class="t-name animate-text" id="testimonialName"></div>
+            <div class="t-role animate-text" id="testimonialRole"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="testimonials-col" id="testimonialsCol">
+
+
+      <div class="t-stack-item is-active" data-index="0">
+        <span class="t-stack-label animate-text">Web Design</span>
+      </div>
+
+      <div class="t-stack-item" data-index="1">
+        <span class="t-stack-label animate-text">Web Development</span>
+      </div>
+
+      <div class="t-stack-item" data-index="2">
+        <span class="t-stack-label animate-text">Copywriting</span>
+      </div>
+
+      <div class="t-stack-item" data-index="3">
+        <span class="t-stack-label animate-text">Brand Design</span>
+      </div>
+
+      <div class="t-stack-item" data-index="4">
+        <span class="t-stack-label animate-text">SEO</span>
+      </div>
+
+      <div class="t-stack-item" data-index="5">
+        <span class="t-stack-label animate-text">Ongoing Support</span>
+      </div>
+
+    </div>
+  </section>
+  <footer class="site-footer" id="siteFooter">
+
+    <div id="spline-container" aria-hidden="true">
+      <canvas id="footerCanvas3d"></canvas>
+    </div>
+
+    <div class="sf-badge">
+      <div class="sf-badge-mark">
+        <span class="sf-badge-date" id="sfBadgeDate">14</span>
+      </div>
+      <div class="sf-badge-text">
+        <span class="sf-badge-month" id="sfBadgeMonth">jul</span>
+        <span class="sf-badge-status">available<br>for work</span>
+      </div>
+    </div>
+
+    <div class="sf-container">
+
+      <div class="sf-top">
+
+        <div class="sf-hero">
+          <h2 class="sf-headline animate-line">Let's build something <em>awesome.</em></h2>
+        </div>
+
+<div class="sf-email-row">
+  <a href="mailto:sharan.bharta@hotmail.com" class="sf-hello-btn" id="sfEmail"
+     aria-label="Email sharan.bharta@hotmail.com">
+    <span class="sf-hello-static">Hire Me</span>
+    <span class="sf-hello-track" id="sfHelloTrack" aria-hidden="true">
+      <span>Hire Me</span>
+      <span>Hire Me</span>
+      <span>Hire Me</span>
+      <span>Hire Me</span>
+    </span>
+  </a>
+</div>
+      </div>
+      
+      <div class="sf-bottom">
+        <div class="sf-bottom-quirks">
+          <span class="sf-location">Dubai<time id="sfClock"></time></span>
+          <span class="sf-location views">Portfolio Views<span id="views"></span></span>
+        </div>
+
+        <div class="sf-divider"></div>
+
+        <div class="sf-bottom-bar">
+          <nav class="sf-nav" aria-label="Footer">
+            <a href="#hero" class="sf-nav-link">
+              <span class="sf-label-clip"><span class="sf-label-stack">
+                  <span class="sf-label-line">Home</span>
+                  <span class="sf-label-line" aria-hidden="true">Home</span>
+                </span></span>
+            </a>
+            <a href="#about" class="sf-nav-link">
+              <span class="sf-label-clip"><span class="sf-label-stack">
+                  <span class="sf-label-line">About</span>
+                  <span class="sf-label-line" aria-hidden="true">About</span>
+                </span></span>
+            </a>
+            <a href="#projects" class="sf-nav-link">
+              <span class="sf-label-clip"><span class="sf-label-stack">
+                  <span class="sf-label-line">Projects</span>
+                  <span class="sf-label-line" aria-hidden="true">Projects</span>
+                </span></span>
+            </a>
+          </nav>
+
+          <div class="sf-socials">
+            <a href="https://github.com/CoderPopCat" target="_blank" rel="noopener" class="sf-social-link">
+              <span class="sf-label-clip"><span class="sf-label-stack">
+                  <span class="sf-label-line">GitHub</span>
+                  <span class="sf-label-line" aria-hidden="true">GitHub</span>
+                </span></span>
+              <span class="sf-arrow" aria-hidden="true">&#8599;</span>
+            </a>
+            <a href="https://popcat.xyz/server" target="_blank" rel="noopener" class="sf-social-link">
+              <span class="sf-label-clip"><span class="sf-label-stack">
+                  <span class="sf-label-line">Discord</span>
+                  <span class="sf-label-line" aria-hidden="true">Discord</span>
+                </span></span>
+              <span class="sf-arrow" aria-hidden="true">&#8599;</span>
+            </a>
+            <a href="https://www.instagram.com/sharanpreet._.s" target="_blank" rel="noopener"
+              class="sf-social-link">
+              <span class="sf-label-clip"><span class="sf-label-stack">
+                  <span class="sf-label-line">Instagram</span>
+                  <span class="sf-label-line" aria-hidden="true">Instagram</span>
+                </span></span>
+              <span class="sf-arrow" aria-hidden="true">&#8599;</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
     </div>
   </footer>
-  <script src="https://cdn.jsdelivr.net/npm/@srexi/purecounterjs/dist/purecounter_vanilla.js"></script>
-  <script>
-    if (window.innerWidth > 600) {
-      new PureCounter({
-        selector: '.purecounter',
-        start: 0,
-        end: 100,
-        duration: 2,
-        delay: 10,
-        once: true,
-        repeat: false,
-        decimals: 0,
-        legacy: true,
-        filesizing: false,
-        currency: false,
-        separator: false,
-      });
-    };
-    const updateViews = async () => {
-      const response = await fetch('https://cdn.popcat.xyz/update');
-      const res = await response.json();
-      const { count } = res;
-      const viewsCount = document.getElementById('views-count');
-      viewsCount.setAttribute('data-purecounter-end', count);
-      viewsCount.innerHTML = count;
-    }
-    updateViews();
-  </script>
-  <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r98/three.js"></script>
-  <script src="assets/js/perlin.js"></script>
-  <script src="https://unpkg.com/@popperjs/core@2"></script>
-  <script src="https://unpkg.com/tippy.js@6"></script>
-  <script src="assets/js/projects.js"></script>
-  <script src="assets/js/particles.min.js"></script>
-  <script src="assets/js/script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/ScrollTrigger.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/SplitText.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/CustomEase.min.js" defer></script>
+  <script src="https://unpkg.com/lenis@1.1.5/dist/lenis.min.js" defer></script>
+  <script src="/assets/js/testimonials.js" defer></script>
+  <script src="/assets/js/script.js" defer></script>
+  <script src="/assets/js/footer.js" defer></script>
 </body>
 
 </html>
