@@ -1,4 +1,4 @@
-﻿const DEBUG = false;
+﻿const DEBUG = true;
 
 const lenis = new Lenis();
 window.lenis = lenis;
@@ -45,11 +45,10 @@ const projectsData = [
 ],
 		techStack: ["Node.js", "Discord.js", "MongoDB / Mongoose", "Quick.DB", "Express"],
 		images: [
-			"/assets/img/mockups/bot/1.webp",
-			"/assets/img/mockups/bot/2.png",
-			// "/assets/img/mockups/bot/3.png",
-			"/assets/img/mockups/bot/4.png",
-			"/assets/img/mockups/bot/5.png"
+			{ src: "/assets/img/mockups/bot/1.webp", caption: "Slash command help menu" },
+			{ src: "/assets/img/mockups/bot/2.png", caption: "Live bot stats via /info" },
+			{ src: "/assets/img/mockups/bot/4.png", caption: "Top.gg bot listing page - 80+ Votes & 4.24 Stars" },
+			{ src: "/assets/img/mockups/bot/5.png", caption: "Online command list" }
 		],
 		links: { live: "https://discord.com/oauth2/authorize?client_id=804341143092985886&permissions=2483341366&scope=bot%20applications.commands", github: null },
 		role: "Lead Developer",
@@ -72,9 +71,9 @@ const projectsData = [
 		],
 		techStack: ["Node.js", "Express", "Node Canvas", "MongoDB / Mongoose", "Sharp"],
 		images: [
-			"/assets/img/mockups/api/1.webp",
-			"/assets/img/mockups/api/2.png",
-			"/assets/img/mockups/api/3.png"
+			{ src: "/assets/img/mockups/api/1.webp", caption: "Landing page overview" },
+			{ src: "/assets/img/mockups/api/2.png", caption: "Endpoint directory grid" },
+			{ src: "/assets/img/mockups/api/3.png", caption: "Interactive API playground" }
 		],
 		links: { live: "https://popcat.xyz/api", github: null },
 		role: "Solo Developer",
@@ -97,9 +96,9 @@ const projectsData = [
 		],
 		techStack: ["Next.js", "React", "MongoDB / Mongoose", "Monaco Editor", "Tailwind CSS"],
 		images: [
-			"/assets/img/mockups/codebin/1.webp",
-			"/assets/img/mockups/codebin/2.png",
-			"/assets/img/mockups/codebin/3.png"
+			{ src: "/assets/img/mockups/codebin/1.webp", caption: "Paste view page" },
+			{ src: "/assets/img/mockups/codebin/2.png", caption: "Paste creation editor" },
+			{ src: "/assets/img/mockups/codebin/3.png", caption: "Personal paste history grid" }
 		],
 		links: { live: "https://code.popcat.xyz", github: null },
 		role: "Solo Developer",
@@ -119,15 +118,15 @@ const projectsData = [
 		],
 		techStack: ["Next.js", "React", "Tailwind CSS", "fflate"],
 		images: [
-			"/assets/img/mockups/instawrapped/1.webp",
-			"/assets/img/mockups/instawrapped/2.png",
-			"/assets/img/mockups/instawrapped/3.png",
-			"/assets/img/mockups/instawrapped/4.png",
-			"/assets/img/mockups/instawrapped/5.png",
-			"/assets/img/mockups/instawrapped/6.png",
-			"/assets/img/mockups/instawrapped/7.png",
-			"/assets/img/mockups/instawrapped/8.png",
-			"/assets/img/mockups/instawrapped/9.png",
+			{ src: "/assets/img/mockups/instawrapped/1.webp", caption: "Instawrapped home page" },
+			{ src: "/assets/img/mockups/instawrapped/2.png", caption: "Overview dashboard & stats" },
+			{ src: "/assets/img/mockups/instawrapped/3.png", caption: "Activity heatmap & top DMs" },
+			{ src: "/assets/img/mockups/instawrapped/4.png", caption: "Conversation activity list" },
+			{ src: "/assets/img/mockups/instawrapped/5.png", caption: "Likes & comments analytics" },
+			{ src: "/assets/img/mockups/instawrapped/6.png", caption: "Followers & following overview" },
+			{ src: "/assets/img/mockups/instawrapped/7.png", caption: "Follow-back comparison lists" },
+			{ src: "/assets/img/mockups/instawrapped/8.png", caption: "Profile change timeline" },
+			{ src: "/assets/img/mockups/instawrapped/9.png", caption: "Full-text message search" },
 		],
 		links: { live: "https://instawrapped.popcat.xyz", github: "https://github.com/CoderPopCat/instawrapped" },
 		role: "Solo Developer",
@@ -147,7 +146,7 @@ const projectsData = [
 		],
 		techStack: ["React", "Firebase", "Firestore", "React Router"],
 		images: [
-			"/assets/img/mockups/chat/1.webp"
+			{ src: "/assets/img/mockups/chat/1.webp", caption: "Live chat room UI" }
 		],
 		links: { live: "https://chat.popcat.xyz", github: null },
 		role: "Solo Developer",
@@ -167,8 +166,8 @@ const projectsData = [
 		],
 		techStack: ["Express", "MongoDB / Mongoose", "EJS", "Tailwind CSS"],
 		images: [
-			"/assets/img/mockups/url/1.webp",
-			"/assets/img/mockups/url/2.png"
+			{ src: "/assets/img/mockups/url/1.webp", caption: "Shortener homepage & entries" },
+			{ src: "/assets/img/mockups/url/2.png", caption: "Link stats & QR share" }
 		],
 		links: { live: "https://url.popcat.xyz", github: "https://github.com/CoderPopCat/url-shortener" },
 		role: "Solo Developer",
@@ -1391,6 +1390,10 @@ function initCaseStudy(cards, projectIndexEl, projectNamesEl) {
 	}
 
 	function updateFigCounter(project) {
+		if (csFigLabel) {
+			const caption = project.images[state.galleryIndex].caption;
+			csFigLabel.textContent = `Fig. ${String(state.galleryIndex + 1).padStart(2, "0")} - ${caption}`;
+		}
 		if (!csFigCounter) return;
 		const total = project.images.length;
 		csFigCounter.textContent = `${String(state.galleryIndex + 1).padStart(2, "0")} / ${String(total).padStart(2, "0")}`;
@@ -1406,7 +1409,7 @@ function initCaseStudy(cards, projectIndexEl, projectNamesEl) {
 		const front = state.galleryFrontIsA ? state.imgA : state.imgB;
 		const back = state.galleryFrontIsA ? state.imgB : state.imgA;
 
-		back.src = project.images[newIndex];
+		back.src = project.images[newIndex].src;
 		back.alt = `${project.title} screenshot ${newIndex + 1}`;
 
 		gsap.killTweensOf([state.imgA, state.imgB]);
@@ -1504,11 +1507,10 @@ function initCaseStudy(cards, projectIndexEl, projectNamesEl) {
 		if (csGalleryPrev) csGalleryPrev.style.display = singleImage ? "none" : "";
 		if (csGalleryNext) csGalleryNext.style.display = singleImage ? "none" : "";
 		if (csFigCounter) csFigCounter.style.display = singleImage ? "none" : "";
-		if (csFigLabel) csFigLabel.textContent = `Fig. 01 - ${project.title}`;
 		updateFigCounter(project);
 
 		csThumbs.innerHTML = "";
-		project.images.forEach((src, i) => {
+		project.images.forEach(({ src }, i) => {
 			const btn = document.createElement("button");
 			btn.type = "button";
 			btn.className = "cs-thumb" + (i === 0 ? " is-active" : "");
@@ -1577,7 +1579,7 @@ function initCaseStudy(cards, projectIndexEl, projectNamesEl) {
 		const d = reduced ? DUR.reduced : DUR.normal;
 
 		gsap.killTweensOf([state.imgA, state.imgB]);
-		state.imgA.src = state.activeProject.images[0];
+		state.imgA.src = state.activeProject.images[0].src;
 		state.imgA.alt = state.imgOriginalAlt;
 		gsap.set(state.imgA, { opacity: 1 });
 		gsap.set(state.imgB, { opacity: 0 });
