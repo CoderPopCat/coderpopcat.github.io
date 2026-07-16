@@ -791,7 +791,7 @@ body>section>div>h1>div>div>div.word.word2 {
   top: 0;
   right: 0;
   z-index: 10;
-  width: 55%;
+  width: calc(100% - min(58vw, 810px));
   height: 100vh;
   display: flex;
   align-items: center;
@@ -802,7 +802,8 @@ body>section>div>h1>div>div>div.word.word2 {
 
 .cs-hero-inner {
   position: relative;
-  width: min(52vw, 860px);
+  width: min(100%, 860px);
+  container-type: inline-size;
   pointer-events: auto;
 }
 
@@ -821,7 +822,7 @@ body>section>div>h1>div>div>div.word.word2 {
 
 .cs-gallery-arrow {
   position: absolute;
-  top: calc(min(52vw, 860px) * 9 / 32);
+  top: 28.125cqw; /* half the 16:9 image height, as a fraction of cs-hero-inner's own width */
   transform: translateY(-50%);
   width: 40px;
   height: 40px;
@@ -1102,7 +1103,7 @@ body>section>div>h1>div>div>div.word.word2 {
   text-decoration-color: #fff;
 }
 
-@media (max-width: 1023px) {
+@media (max-width: 1200px) {
   .case-study {
     overflow-y: auto;
   }
@@ -1113,17 +1114,15 @@ body>section>div>h1>div>div>div.word.word2 {
     right: auto;
     width: 100%;
     height: auto;
-    padding: 5.5rem 1.25rem 0;
+    padding: 5.5rem 0 0;
     justify-content: center;
   }
 
   .cs-hero-inner {
     width: 100%;
-    max-width: 640px;
-  }
-
-  .cs-gallery-arrow {
-    top: calc(min(100vw - 2.5rem, 640px) * 9 / 32);
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 1.25rem;
   }
 
   .case-study-dialog {
@@ -1131,11 +1130,23 @@ body>section>div>h1>div>div>div.word.word2 {
     top: auto;
     left: auto;
     width: 100%;
+    max-width: 760px;
+    margin: 0 auto;
     height: auto;
     overflow-y: visible;
     justify-content: flex-start;
     padding: 2rem 1.25rem 4rem;
     gap: 1rem;
+  }
+
+  .cs-desc,
+  .cs-stats {
+    max-width: none;
+    width: 100%;
+  }
+
+  .cs-stat {
+    align-items: center;
   }
 
   .case-study-back {
