@@ -1,4 +1,6 @@
-﻿const lenis = new Lenis();
+﻿const DEBUG = false;
+
+const lenis = new Lenis();
 window.lenis = lenis;
 
 lenis.on("scroll", ScrollTrigger.update);
@@ -19,7 +21,7 @@ document.addEventListener("click", (e) => {
 	lenis.scrollTo(target, { duration: 1.5 });
 });
 
-gsap.registerPlugin(ScrollTrigger, SplitText, CustomEase);
+gsap.registerPlugin(ScrollTrigger, SplitText, CustomEase, Flip);
 
 CustomEase.create("counterEase", "M0,0 C0.126,0.382 0.108,0.691 0.266,0.839 0.458,1.019 0.818,1.001 1,1 ");
 
@@ -29,6 +31,152 @@ let _loaderExited = false;
 function tryPlayHero() {
 	if (_playHeroAnims && _loaderExited) _playHeroAnims();
 }
+
+const projectsData = [
+	{
+		id: "popcat-bot",
+		index: "01",
+		title: "Pop Cat Bot",
+		shortDescription: "A cool multipurpose Discord bot with a lot of commands and functionality.",
+		longDescription: [
+    "Pop Cat Bot is a multi-purpose Discord bot offering an economy game, moderation tools, a boss-fight mini-game, a geography guessing game, meme/image generation, an AI chatbot, and community features like welcome cards and a starboard — all through slash commands, running across thousands of servers.",
+    "At that scale, the bot can't run as a single process, so it's split into several parallel copies that each handle a slice of the servers. Since those copies don't share memory, anything needing the full picture — like a total server count or a cross-server announcement — has to be explicitly gathered and combined rather than read from one place.",
+    "Storage is split by need rather than forced into one database: slower-changing settings (tickets, welcome messages) live in MongoDB, while fast-changing state (economy balances, boss-fight HP) lives in a lightweight key-value store. The help menu is generated from each command's own metadata instead of hand-written, so it can't drift out of sync as commands are added."
+],
+		techStack: ["Node.js", "Discord.js", "MongoDB / Mongoose", "Quick.DB", "Express"],
+		images: [
+			"/assets/img/mockups/bot/1.webp",
+			"/assets/img/mockups/bot/2.png",
+			// "/assets/img/mockups/bot/3.png",
+			"/assets/img/mockups/bot/4.png",
+			"/assets/img/mockups/bot/5.png"
+		],
+		links: { live: "https://discord.com/oauth2/authorize?client_id=804341143092985886&permissions=2483341366&scope=bot%20applications.commands", github: null },
+		role: "Lead Developer",
+		type: "Discord Bot",
+		year: "2021 - ongoing",
+		stats: [
+			{ n: "300k+", label: "Users served" },
+			{ n: "3,300+", label: "Active servers" }
+		]
+	},
+	{
+		id: "popcat-api",
+		index: "02",
+		title: "Pop Cat API",
+		shortDescription: "The Only API You'll Ever Need! Has Tons of Image Manipulation and Utility Endpoints!",
+		longDescription: [
+			"PopCat API is a large, free-to-use REST API serving image generators, text/fun utilities, and third-party data lookups over a single set of GET endpoints - things like meme templates (jail, wanted, communism, welcome cards), image filters (blur, greyscale, invert, hue-rotate), and integrations for weather, IMDb, GitHub, npm, Steam, YouTube, and song lyrics. It's consumed by Discord bots and hobby web apps, so the API surface itself is the product.",
+			"The interesting problem wasn't any single endpoint - it was keeping 90+ handlers maintainable as the API grew. Routes are auto-registered from the filesystem. At this scale, abuse resistance mattered as much as features, so the request pipeline layers IP-based rate limiting, Helmet hardening, 30s timeouts, and real-time Discord-webhook logging of usage so abuse patterns surface immediately instead of getting buried in server logs.",
+			"Endpoints fall into a few families: Canvas-based image generators built on node-canvas with custom-registered fonts (welcomecard, wanted, communism, lulcat, drip); single-purpose image filters and compositing; text/fun endpoints (8ball, Morse code, dictionary, jokes, quotes, would-you-rather); and data-lookup integrations (weather, IMDb, GitHub, npm, Steam, YouTube, Genius lyrics, country/flag data) and MUCH more..."
+		],
+		techStack: ["Node.js", "Express", "Node Canvas", "MongoDB / Mongoose", "Sharp"],
+		images: [
+			"/assets/img/mockups/api/1.webp",
+			"/assets/img/mockups/api/2.png",
+			"/assets/img/mockups/api/3.png"
+		],
+		links: { live: "https://popcat.xyz/api", github: null },
+		role: "Solo Developer",
+		type: "Public REST API",
+		year: "2021 - ongoing",
+		stats: [
+			{ n: "150M+", label: "Requests served" },
+			{ n: "50k+", label: "Monthly Users" }
+		]
+	},
+	{
+		id: "codebin",
+		index: "03",
+		title: "Code Bin",
+		shortDescription: "A pastebin with themes and syntax highlighting for quick, shareable code snippets.",
+		longDescription: [
+			"CodeBin lets anyone paste a code snippet, pick a language and syntax theme, and get back a clean shareable link in seconds - no account required. Each paste gets its own view counter and a polished read-only view that mirrors the editor experience exactly, right down to the syntax theme it was written in.",
+			"The editor is Monaco, the same engine that powers VS Code, embedded directly in the browser with instant language switching and a full library of swappable syntax themes. On the backend, Next.js API routes and MongoDB handle persistence, with content-aware deduplication so re-submitting an existing snippet instantly returns its existing link instead of creating clutter. A token-authenticated API layer sits alongside the web UI, letting pastes be created programmatically - the same engine powering the site also runs as a public API.",
+			"Every submission passes through a profanity filter before it's stored, and the UI is tuned with AOS scroll animations, glassmorphism card styling, and toast-driven feedback for a smooth, app-like feel. The home page keeps a personal history of pastes a visitor has created, surfaced as cards with relative timestamps, line/character counts, and a language pill - turning a simple utility into something that feels considered end to end."
+		],
+		techStack: ["Next.js", "React", "MongoDB / Mongoose", "Monaco Editor", "Tailwind CSS"],
+		images: [
+			"/assets/img/mockups/codebin/1.webp",
+			"/assets/img/mockups/codebin/2.png",
+			"/assets/img/mockups/codebin/3.png"
+		],
+		links: { live: "https://code.popcat.xyz", github: null },
+		role: "Solo Developer",
+		type: "Web App",
+		year: "2024",
+		stats: []
+	},
+	{
+		id: "instawrapped",
+		index: "04",
+		title: "InstaWrapped",
+		shortDescription: "Easy to use, open source Instagram data package explorer with a beautiful UI.",
+		longDescription: [
+			"InstaWrapped turns the raw JSON export from Instagram's 'Download Your Information' tool into a visual breakdown - overview stats, follower/following changes, likes and messages activity, ad interests, profile timeline, search history, and a GitHub-style activity heatmap.",
+			"Built with Next.js, React, Tailwind CSS, and shadcn/ui. The interesting problem wasn't the visualizations - it was processing GBs of personal data without a byte touching a server. The ZIP is streamed and decompressed in the browser with fflate, and the heavy parsing runs in a dedicated Web Worker so the UI stays responsive. No backend, no database: open the Network tab while it runs and there's nothing to see.",
+			"The parsed export is organized into a dashboard with sidebar navigation: an Overview for big-picture numbers, an On This Day view resurfacing old posts, a Timeline of account changes, a Topics & Ads breakdown of how Meta categorizes you, a Search page for your message and comment history, plus dedicated Messages, Followers, and Likes sections."
+		],
+		techStack: ["Next.js", "React", "Tailwind CSS", "fflate"],
+		images: [
+			"/assets/img/mockups/instawrapped/1.webp",
+			"/assets/img/mockups/instawrapped/2.png",
+			"/assets/img/mockups/instawrapped/3.png",
+			"/assets/img/mockups/instawrapped/4.png",
+			"/assets/img/mockups/instawrapped/5.png",
+			"/assets/img/mockups/instawrapped/6.png",
+			"/assets/img/mockups/instawrapped/7.png",
+			"/assets/img/mockups/instawrapped/8.png",
+			"/assets/img/mockups/instawrapped/9.png",
+		],
+		links: { live: "https://instawrapped.popcat.xyz", github: "https://github.com/CoderPopCat/instawrapped" },
+		role: "Solo Developer",
+		type: "Web App",
+		year: "2023 - ongoing",
+		stats: []
+	},
+	{
+		id: "popchat",
+		index: "05",
+		title: "Pop Chat",
+		shortDescription: "An online chatting website with a beautiful UI and the ability to create your own chat rooms.",
+		longDescription: [
+			"Pop Chat is a lightweight real-time chat app: sign in with Google, type a room ID, and you're dropped straight into a live conversation. There's no room-creation step - typing an ID that doesn't exist yet just starts a new room - and no password to manage beyond Google auth.",
+			"Built with React and Firebase, the interesting part is how little infrastructure it needs: there's no custom backend or REST API, just Firestore as the datastore and react-firebase-hooks to subscribe components directly to live query snapshots. Every message write fans out to all connected clients through Firestore's realtime listeners, and a serverTimestamp() field keeps ordering consistent even across clients with different local clocks.",
+			"Routing is handled with react-router: '/' is the Google sign-in and room-picker screen, and '/rooms/:id' renders the chat itself, guarded so a signed-out visitor gets bounced back to sign-in. Inside a room, messages are pulled from a single shared Firestore collection and filtered client-side by room id, rendered with the sender's avatar and name, and the thread auto-scrolls to the newest message on send and on incoming messages."
+		],
+		techStack: ["React", "Firebase", "Firestore", "React Router"],
+		images: [
+			"/assets/img/mockups/chat/1.webp"
+		],
+		links: { live: "https://chat.popcat.xyz", github: null },
+		role: "Solo Developer",
+		type: "Web App",
+		year: "2022",
+		stats: []
+	},
+	{
+		id: "url-shortener",
+		index: "06",
+		title: "URL Shortener",
+		shortDescription: "A simple, easy to use URL shortener with statistics on the number of clicks on your endpoint.",
+		longDescription: [
+			"A zero-nonsense link-shortening service: paste a long URL, optionally pick a custom alias, get back a short link that redirects and counts every click. Built with Express, EJS, and MongoDB - no client-side framework, no build step, just server-rendered pages.",
+			"Each short link gets its own stats page showing total views and days active, plus a share button that uses the Web Share API with a clipboard-copy fallback, and a QR code generated entirely client-side with QRious. The homepage lists every link ever created, paginated 50 at a time.",
+			"Abuse is kept in check with a extensive guards."
+		],
+		techStack: ["Express", "MongoDB / Mongoose", "EJS", "Tailwind CSS"],
+		images: [
+			"/assets/img/mockups/url/1.webp",
+			"/assets/img/mockups/url/2.png"
+		],
+		links: { live: "https://url.popcat.xyz", github: "https://github.com/CoderPopCat/url-shortener" },
+		role: "Solo Developer",
+		type: "Web App",
+		year: "2021 - Rewrite in 2025", 
+		stats: []
+	}
+];
 
 const otherProjects = [
 	{
@@ -56,13 +204,15 @@ const otherProjects = [
 
 document.addEventListener("DOMContentLoaded", () => {
 	document.fonts.ready.then(init);
-	(async () => {
-		const response = await fetch('https://cdn.popcat.xyz/update');
-		const res = await response.json();
-		const { count } = res;
-		const views = document.querySelector("#views");
-		views.innerText = count.toLocaleString();
-	})();
+	if (!DEBUG) {
+		(async () => {
+			const response = await fetch('https://cdn.popcat.xyz/update');
+			const res = await response.json();
+			const { count } = res;
+			const views = document.querySelector("#views");
+			views.innerText = count.toLocaleString();
+		})();
+	}
 });
 
 function init() {
@@ -245,20 +395,26 @@ function init() {
 			.call(onComplete, null, "<");
 	}
 
-	startLoader(() => {
-		gsap.to(".bar", {
-			duration: 1,
-			height: 0,
-			stagger: { amount: 0.15 },
-			ease: "power4.inOut",
-			onUpdate() {
-				if (!_loaderExited && this.progress() >= 0.5) {
-					_loaderExited = true;
-					tryPlayHero();
+	if (DEBUG) {
+		gsap.set(".overlay", { display: "none" });
+		_loaderExited = true;
+		tryPlayHero();
+	} else {
+		startLoader(() => {
+			gsap.to(".bar", {
+				duration: 1,
+				height: 0,
+				stagger: { amount: 0.15 },
+				ease: "power4.inOut",
+				onUpdate() {
+					if (!_loaderExited && this.progress() >= 0.5) {
+						_loaderExited = true;
+						tryPlayHero();
+					}
 				}
-			}
+			});
 		});
-	});
+	}
 
 
 	const heroSplits = [];
@@ -360,7 +516,7 @@ function init() {
 		navChars = navSplit.chars;
 	}
 
-	gsap.set(".hero-actions button", { opacity: 0, x: -24 });
+	gsap.set(".hero-actions .projects-button", { opacity: 0, x: -24 });
 	gsap.set(".socials .icon", { opacity: 0, x: -20 });
 
 
@@ -381,7 +537,7 @@ function init() {
 			{ width: "100%", duration: 1.8, ease: "expo.out", delay: 0.45 }
 		);
 
-		gsap.to(".hero-actions button", { opacity: 1, x: 0, duration: 1.0, ease: "expo.out", delay: 0.55 });
+		gsap.to(".hero-actions .projects-button", { opacity: 1, x: 0, duration: 1.0, ease: "expo.out", delay: 0.55 });
 
 		if (navChars) {
 			gsap.to(navChars, { opacity: 1, y: 0, duration: 0.7, stagger: 0.022, ease: "expo.out", delay: 0.65 });
@@ -683,6 +839,8 @@ function init() {
 				});
 			},
 		});
+
+		initCaseStudy(cards, projectIndexEl, projectNamesEl);
 	}
 
 	const awardsListContainer = document.querySelector(".op-list");
@@ -1127,4 +1285,388 @@ function init() {
 		});
 	}
 
+}
+
+function initCaseStudy(cards, projectIndexEl, projectNamesEl) {
+	const csRoot = document.getElementById("caseStudy");
+	if (!csRoot) return;
+
+	const csBlackout = document.getElementById("csBlackout");
+	const csHeroInner = document.getElementById("csHeroInner");
+	const csGalleryPrev = document.getElementById("csGalleryPrev");
+	const csGalleryNext = document.getElementById("csGalleryNext");
+	const csThumbs = document.getElementById("csThumbs");
+	const csDialog = document.getElementById("csDialog");
+	const csBack = document.getElementById("csBack");
+	const csEyebrow = document.getElementById("csEyebrow");
+	const csIndex = document.getElementById("csIndex");
+	const csTitle = document.getElementById("caseStudyTitle");
+	const csDesc = document.getElementById("csDesc");
+	const csStats = document.getElementById("csStats");
+	const csSpec = document.getElementById("csSpec");
+	const csLinks = document.getElementById("csLinks");
+	const csFigCaption = document.getElementById("csFigCaption");
+	const csFigLabel = document.getElementById("csFigLabel");
+	const csFigCounter = document.getElementById("csFigCounter");
+
+	const DUR = {
+		normal: { fade: 0.35, fadeSpread: 0.15, travel: 0.8, content: 0.5, inactiveFade: 0.15 },
+		reduced: { fade: 0.15, fadeSpread: 0, travel: 0, content: 0.15, inactiveFade: 0.15 },
+	};
+
+	const prefersReducedMotion = () =>
+		window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+	const state = {
+		isOpen: false,
+		isAnimating: false,
+		activeProject: null,
+		activeImgWrap: null,
+		originalParent: null,
+		originalNextSibling: null,
+		imgA: null,
+		imgB: null,
+		imgOriginalAlt: "",
+		galleryIndex: 0,
+		galleryFrontIsA: true,
+		fadeOutTargets: [],
+		inactiveCards: [],
+		phase3Targets: [],
+		lastFocusedEl: null,
+	};
+
+	function getFadeOutTargets(activeCard) {
+		return [
+			projectIndexEl,
+			projectNamesEl,
+			...activeCard.querySelectorAll(".project-header, .project-title, .project-description, .project-button"),
+		];
+	}
+
+	function getInactiveCards(activeCard) {
+		return cards.filter((card) => card !== activeCard);
+	}
+
+	function specRow(label, value) {
+		return `<div class="cs-spec-row"><span class="cs-spec-label">${label}</span><span class="cs-spec-value">${value}</span></div>`;
+	}
+
+	function buildSpecHTML(project) {
+		const rows = [];
+		if (project.role) rows.push(specRow("Role", project.role));
+		if (project.techStack && project.techStack.length) rows.push(specRow("Stack", project.techStack.join(" · ")));
+		if (project.type) rows.push(specRow("Type", project.type));
+		if (project.year) rows.push(specRow("Year", project.year));
+		return rows.join("");
+	}
+
+	function buildStatsHTML(project) {
+		if (!project.stats || !project.stats.length) return "";
+		return project.stats
+			.map((s) => `<div class="cs-stat"><span class="cs-stat-number">${s.n}</span><span class="cs-stat-label">${s.label}</span></div>`)
+			.join("");
+	}
+
+	function buildLinksHTML(project) {
+		const links = [];
+		if (project.links && project.links.live) {
+			links.push(
+				`<a href="${project.links.live}" target="_blank" rel="noopener" class="cs-link cs-link-primary">Visit Live <span class="sf-arrow" aria-hidden="true">&#8599;</span></a>`
+			);
+		}
+		if (project.links && project.links.github) {
+			links.push(
+				`<a href="${project.links.github}" target="_blank" rel="noopener" class="cs-link cs-link-secondary"><i class="fa-brands fa-github" aria-hidden="true"></i> View Code</a>`
+			);
+		}
+		return links.join("");
+	}
+
+	function updateThumbs() {
+		csThumbs.querySelectorAll(".cs-thumb").forEach((thumb, i) => {
+			const active = i === state.galleryIndex;
+			thumb.classList.toggle("is-active", active);
+			thumb.setAttribute("aria-current", active ? "true" : "false");
+		});
+	}
+
+	function updateFigCounter(project) {
+		if (!csFigCounter) return;
+		const total = project.images.length;
+		csFigCounter.textContent = `${String(state.galleryIndex + 1).padStart(2, "0")} / ${String(total).padStart(2, "0")}`;
+	}
+
+	function goToImage(index) {
+		const project = state.activeProject;
+		if (!project || !state.isOpen) return;
+		const total = project.images.length;
+		const newIndex = ((index % total) + total) % total;
+		if (newIndex === state.galleryIndex) return;
+
+		const front = state.galleryFrontIsA ? state.imgA : state.imgB;
+		const back = state.galleryFrontIsA ? state.imgB : state.imgA;
+
+		back.src = project.images[newIndex];
+		back.alt = `${project.title} screenshot ${newIndex + 1}`;
+
+		gsap.killTweensOf([state.imgA, state.imgB]);
+		gsap.to(back, { opacity: 1, duration: 0.28, ease: "power1.inOut" });
+		gsap.to(front, { opacity: 0, duration: 0.28, ease: "power1.inOut" });
+
+		state.galleryFrontIsA = !state.galleryFrontIsA;
+		state.galleryIndex = newIndex;
+		updateThumbs();
+		updateFigCounter(project);
+	}
+
+	function onKeydown(e) {
+		if (e.key === "Escape") {
+			e.preventDefault();
+			closeCaseStudy();
+			return;
+		}
+		if (e.key === "ArrowLeft") {
+			goToImage(state.galleryIndex - 1);
+			return;
+		}
+		if (e.key === "ArrowRight") {
+			goToImage(state.galleryIndex + 1);
+			return;
+		}
+		if (e.key === "Tab") {
+			trapFocus(e);
+		}
+	}
+
+	function trapFocus(e) {
+		const focusables = Array.from(csRoot.querySelectorAll("button, a[href]")).filter(
+			(el) => el.offsetParent !== null
+		);
+		if (!focusables.length) return;
+		const first = focusables[0];
+		const last = focusables[focusables.length - 1];
+		if (e.shiftKey && document.activeElement === first) {
+			e.preventDefault();
+			last.focus();
+		} else if (!e.shiftKey && document.activeElement === last) {
+			e.preventDefault();
+			first.focus();
+		}
+	}
+
+	function openCaseStudy(project, cardEl, triggerBtn) {
+		if (state.isAnimating || state.isOpen) return;
+		state.isAnimating = true;
+		state.isOpen = true;
+		state.activeProject = project;
+		state.lastFocusedEl = triggerBtn;
+		state.galleryIndex = 0;
+		state.galleryFrontIsA = true;
+
+		const reduced = prefersReducedMotion();
+		const d = reduced ? DUR.reduced : DUR.normal;
+
+		if (window.lenis) window.lenis.stop();
+		document.body.style.overflow = "hidden";
+
+		const imgWrap = cardEl.querySelector(".project-img-wrap");
+		const imgA = imgWrap.querySelector("img");
+		state.activeImgWrap = imgWrap;
+		state.imgA = imgA;
+		state.imgOriginalAlt = imgA.getAttribute("alt") || "";
+		state.originalParent = imgWrap.parentNode;
+		state.originalNextSibling = imgWrap.nextSibling;
+
+		const imgB = document.createElement("img");
+		imgB.className = "project-img-b";
+		imgB.alt = "";
+		imgB.setAttribute("aria-hidden", "true");
+		imgB.decoding = "async";
+		gsap.set(imgB, { opacity: 0 });
+		imgWrap.appendChild(imgB);
+		state.imgB = imgB;
+
+		if (csDialog) csDialog.scrollTop = 0;
+
+		csIndex.textContent = `(${project.index})`;
+		csTitle.textContent = project.title;
+		csDesc.innerHTML = project.longDescription.map((p) => `<p>${p}</p>`).join("");
+
+		const statsHTML = buildStatsHTML(project);
+		csStats.innerHTML = statsHTML;
+		csStats.style.display = statsHTML ? "" : "none";
+
+		csSpec.innerHTML = buildSpecHTML(project);
+		csLinks.innerHTML = buildLinksHTML(project);
+		csRoot.setAttribute("aria-label", `${project.title} case study`);
+
+		const singleImage = project.images.length <= 1;
+		if (csGalleryPrev) csGalleryPrev.style.display = singleImage ? "none" : "";
+		if (csGalleryNext) csGalleryNext.style.display = singleImage ? "none" : "";
+		if (csFigCounter) csFigCounter.style.display = singleImage ? "none" : "";
+		if (csFigLabel) csFigLabel.textContent = `Fig. 01 - ${project.title}`;
+		updateFigCounter(project);
+
+		csThumbs.innerHTML = "";
+		project.images.forEach((src, i) => {
+			const btn = document.createElement("button");
+			btn.type = "button";
+			btn.className = "cs-thumb" + (i === 0 ? " is-active" : "");
+			btn.setAttribute("aria-label", `View image ${i + 1} of ${project.images.length}`);
+			btn.setAttribute("aria-current", i === 0 ? "true" : "false");
+			btn.innerHTML = `<img src="${src}" alt="" loading="lazy" decoding="async">`;
+			btn.addEventListener("click", () => goToImage(i));
+			csThumbs.appendChild(btn);
+		});
+
+		const fadeOutTargets = getFadeOutTargets(cardEl);
+		const inactiveCards = getInactiveCards(cardEl);
+		const phase3Targets = [csBack, csEyebrow, csTitle, csDesc, csStats, csSpec, csLinks, csGalleryPrev, csGalleryNext, csFigCaption, csThumbs].filter(Boolean);
+		state.fadeOutTargets = fadeOutTargets;
+		state.inactiveCards = inactiveCards;
+		state.phase3Targets = phase3Targets;
+
+		gsap.set(phase3Targets, { opacity: 0, y: reduced ? 0 : 16 });
+		gsap.set(csRoot, { display: "block" });
+		csRoot.removeAttribute("aria-hidden");
+
+		gsap.set(cardEl, { height: cardEl.offsetHeight });
+
+		const flipState = Flip.getState(imgWrap);
+		csHeroInner.insertBefore(imgWrap, csHeroInner.firstChild);
+		const flipTween = Flip.from(flipState, {
+			duration: d.travel,
+			ease: "power3.inOut",
+		});
+
+		const tl = gsap.timeline({
+			onStart: () => {
+				if (csBack) csBack.focus();
+			},
+			onComplete: () => {
+				state.isAnimating = false;
+			},
+		});
+
+		tl.to(fadeOutTargets, {
+			opacity: 0,
+			y: reduced ? 0 : -10,
+			duration: d.fade,
+			stagger: { amount: d.fadeSpread, from: "start" },
+			ease: "power2.out",
+		})
+			.to(csBlackout, { opacity: 1, duration: d.fade }, "<")
+			.to(inactiveCards, { opacity: 0, duration: d.inactiveFade, ease: "power2.in" }, "<")
+			.add(flipTween)
+			.to(phase3Targets, {
+				opacity: 1,
+				y: 0,
+				duration: d.content,
+				stagger: reduced ? 0 : 0.075,
+				ease: "power2.out",
+			});
+
+		document.addEventListener("keydown", onKeydown);
+	}
+
+	function closeCaseStudy() {
+		if (!state.isOpen || state.isAnimating) return;
+		state.isAnimating = true;
+
+		const reduced = prefersReducedMotion();
+		const d = reduced ? DUR.reduced : DUR.normal;
+
+		gsap.killTweensOf([state.imgA, state.imgB]);
+		state.imgA.src = state.activeProject.images[0];
+		state.imgA.alt = state.imgOriginalAlt;
+		gsap.set(state.imgA, { opacity: 1 });
+		gsap.set(state.imgB, { opacity: 0 });
+
+		const placeholder = document.createElement("div");
+		placeholder.className = "project-img-wrap";
+		gsap.set(placeholder, { visibility: "hidden" });
+		state.originalParent.insertBefore(placeholder, state.originalNextSibling);
+
+		const fitTween = Flip.fit(state.activeImgWrap, placeholder, {
+			duration: d.travel,
+			ease: "power3.inOut",
+			scale: true,
+		});
+
+		const imgBRef = state.imgB;
+		const imgARef = state.imgA;
+		const wrapRef = state.activeImgWrap;
+		const originalParentRef = state.originalParent;
+		const fadeOutTargets = state.fadeOutTargets;
+		const inactiveCards = state.inactiveCards;
+		const phase3Targets = state.phase3Targets;
+		const focusTarget = state.lastFocusedEl;
+
+		const tl = gsap.timeline({
+			onComplete: () => {
+				imgBRef.remove();
+				gsap.set(imgARef, { clearProps: "all" });
+				gsap.set(csRoot, { display: "none" });
+				csRoot.setAttribute("aria-hidden", "true");
+				gsap.set(fadeOutTargets, { clearProps: "all" });
+				gsap.set(phase3Targets, { clearProps: "all" });
+				gsap.set(csBlackout, { clearProps: "all" });
+
+				if (window.lenis) window.lenis.start();
+				document.body.style.overflow = "";
+				document.removeEventListener("keydown", onKeydown);
+
+				state.isOpen = false;
+				state.isAnimating = false;
+				state.activeProject = null;
+				state.activeImgWrap = null;
+				state.imgA = null;
+				state.imgB = null;
+
+				if (focusTarget) focusTarget.focus();
+			},
+		});
+
+		tl.to(phase3Targets, {
+			opacity: 0,
+			y: reduced ? 0 : -16,
+			duration: d.content,
+			stagger: reduced ? 0 : 0.075,
+			ease: "power2.out",
+		})
+			.add(fitTween)
+			.addLabel("settled")
+			.to(csBlackout, { opacity: 0, duration: d.fade }, `settled-=${d.fade * 0.85}`)
+			.to(fadeOutTargets, {
+				opacity: 1,
+				y: 0,
+				duration: d.fade,
+				stagger: { amount: d.fadeSpread, from: "start" },
+				ease: "power2.out",
+			}, "<")
+			.to(inactiveCards, { opacity: 0.3, duration: d.inactiveFade, ease: "power2.out" }, "<")
+			.call(() => {
+				const freshWrap = document.createElement("div");
+				freshWrap.className = "project-img-wrap";
+				freshWrap.appendChild(imgARef);
+				placeholder.replaceWith(freshWrap);
+				wrapRef.remove();
+				state.activeImgWrap = freshWrap;
+				gsap.set(originalParentRef, { clearProps: "height" });
+			}, [], "settled");
+	}
+
+	cards.forEach((card, i) => {
+		const btn = card.querySelector(".project-button");
+		if (!btn || !projectsData[i]) return;
+		btn.addEventListener("click", (e) => {
+			e.preventDefault();
+			openCaseStudy(projectsData[i], card, btn);
+		});
+	});
+
+	if (csGalleryPrev) csGalleryPrev.addEventListener("click", () => goToImage(state.galleryIndex - 1));
+	if (csGalleryNext) csGalleryNext.addEventListener("click", () => goToImage(state.galleryIndex + 1));
+	if (csBack) csBack.addEventListener("click", () => closeCaseStudy());
+	if (csBlackout) csBlackout.addEventListener("click", () => closeCaseStudy());
 }

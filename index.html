@@ -34,7 +34,8 @@
 <body>
   <div class="overlay">
     <div class="loader-counter" id="loaderCounter" aria-hidden="true">
-      <h1 class="loader-counter-value"><span id="loaderCounterValue">00</span><span class="loader-counter-total">/100</span></h1>
+      <h1 class="loader-counter-value"><span id="loaderCounterValue">00</span><span
+          class="loader-counter-total">/100</span></h1>
     </div>
     <div class="bar"></div>
     <div class="bar"></div>
@@ -128,7 +129,8 @@
               <div class="stat-row-content">
                 <h3 class="stat-row-title animate-text">Community Support</h3>
                 <p class="stat-row-desc animate-line">Donations from some of the thousands happy users of my free-to-use
-                  projects at <a href="https://popcat.xyz" target="_blank" rel="noopener" class="highlight accent">Pop Cat Development</a></p>
+                  projects at <a href="https://popcat.xyz" target="_blank" rel="noopener" class="highlight accent">Pop
+                    Cat Development</a></p>
               </div>
             </div>
             <div class="stat-divider"></div>
@@ -330,6 +332,53 @@
 
       </div>
     </div>
+
+    <div class="case-study" id="caseStudy" aria-hidden="true">
+      <div class="case-study-blackout" id="csBlackout"></div>
+
+      <div class="case-study-hero" id="csHero">
+        <div class="cs-hero-inner" id="csHeroInner">
+          <button type="button" class="cs-gallery-arrow cs-gallery-prev" id="csGalleryPrev" aria-label="Previous image">
+            <i class="fa-regular fa-arrow-left"></i>
+          </button>
+          <button type="button" class="cs-gallery-arrow cs-gallery-next" id="csGalleryNext" aria-label="Next image">
+            <i class="fa-regular fa-arrow-right"></i>
+          </button>
+          <div class="cs-fig-caption" id="csFigCaption">
+            <span class="cs-fig-label" id="csFigLabel"></span>
+            <span class="cs-fig-counter" id="csFigCounter"></span>
+          </div>
+          <div class="cs-thumbs" id="csThumbs" role="tablist" aria-label="Project gallery"></div>
+        </div>
+      </div>
+
+      <div class="case-study-dialog" id="csDialog" role="dialog" aria-modal="true" aria-labelledby="caseStudyTitle"
+        data-lenis-prevent>
+        <button type="button" class="case-study-back" id="csBack" aria-label="Back to projects">
+          <span class="sf-arrow" aria-hidden="true">&#8598;</span>
+          <span class="sf-label-clip"><span class="sf-label-stack">
+              <span class="sf-label-line">Back</span>
+              <span class="sf-label-line" aria-hidden="true">Back</span>
+            </span></span>
+        </button>
+
+        <div class="cs-eyebrow" id="csEyebrow">
+          <span class="cs-eyebrow-index" id="csIndex"></span>
+          <span class="cs-eyebrow-label">Project Info</span>
+        </div>
+
+        <h2 class="cs-title" id="caseStudyTitle"></h2>
+
+        <div class="cs-desc" id="csDesc"></div>
+
+        <div class="cs-stats" id="csStats"></div>
+
+        <div class="cs-spec" id="csSpec"></div>
+
+        <div class="cs-links" id="csLinks"></div>
+      </div>
+    </div>
+
     <div class="other-projects">
       <h2 class="animate-text">Other Projects</h2>
       <div class="op-list">
@@ -375,22 +424,24 @@
       </div>
 
       <div class="t-stack-item" data-index="1">
-        <span class="t-stack-label animate-text">Web Development</span>
+        <span class="t-stack-label animate-text">Frontend Development</span>
       </div>
-
       <div class="t-stack-item" data-index="2">
+        <span class="t-stack-label animate-text">Backend Development</span>
+      </div>
+      <div class="t-stack-item" data-index="3">
         <span class="t-stack-label animate-text">Copywriting</span>
       </div>
 
-      <div class="t-stack-item" data-index="3">
+      <div class="t-stack-item" data-index="4">
         <span class="t-stack-label animate-text">Brand Design</span>
       </div>
 
-      <div class="t-stack-item" data-index="4">
+      <div class="t-stack-item" data-index="5">
         <span class="t-stack-label animate-text">SEO</span>
       </div>
 
-      <div class="t-stack-item" data-index="5">
+      <div class="t-stack-item" data-index="6">
         <span class="t-stack-label animate-text">Ongoing Support</span>
       </div>
 
@@ -420,20 +471,20 @@
           <h2 class="sf-headline animate-line">Let's build something <em>awesome.</em></h2>
         </div>
 
-<div class="sf-email-row">
-  <a href="mailto:sharan.bharta@hotmail.com" class="sf-hello-btn" id="sfEmail"
-     aria-label="Email sharan.bharta@hotmail.com">
-    <span class="sf-hello-static">Hire Me</span>
-    <span class="sf-hello-track" id="sfHelloTrack" aria-hidden="true">
-      <span>Hire Me</span>
-      <span>Hire Me</span>
-      <span>Hire Me</span>
-      <span>Hire Me</span>
-    </span>
-  </a>
-</div>
+        <div class="sf-email-row">
+          <a href="mailto:sharan.bharta@hotmail.com" class="sf-hello-btn" id="sfEmail"
+            aria-label="Email sharan.bharta@hotmail.com">
+            <span class="sf-hello-static">Hire Me</span>
+            <span class="sf-hello-track" id="sfHelloTrack" aria-hidden="true">
+              <span>Hire Me</span>
+              <span>Hire Me</span>
+              <span>Hire Me</span>
+              <span>Hire Me</span>
+            </span>
+          </a>
+        </div>
       </div>
-      
+
       <div class="sf-bottom">
         <div class="sf-bottom-quirks">
           <span class="sf-location">Dubai<time id="sfClock"></time></span>
@@ -479,8 +530,7 @@
                 </span></span>
               <span class="sf-arrow" aria-hidden="true">&#8599;</span>
             </a>
-            <a href="https://www.instagram.com/sharanpreet._.s" target="_blank" rel="noopener"
-              class="sf-social-link">
+            <a href="https://www.instagram.com/sharanpreet._.s" target="_blank" rel="noopener" class="sf-social-link">
               <span class="sf-label-clip"><span class="sf-label-stack">
                   <span class="sf-label-line">Instagram</span>
                   <span class="sf-label-line" aria-hidden="true">Instagram</span>
@@ -498,6 +548,7 @@
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/ScrollTrigger.min.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/SplitText.min.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/CustomEase.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/Flip.min.js" defer></script>
   <script src="https://unpkg.com/lenis@1.1.5/dist/lenis.min.js" defer></script>
   <script src="/assets/js/testimonials.js" defer></script>
   <script src="/assets/js/script.js" defer></script>
