@@ -370,53 +370,8 @@ function init() {
 	}
 	_rafId = requestAnimationFrame(draw);
 
-	function startLoader(onComplete) {
-		const counterValue = document.getElementById("loaderCounterValue");
-		const counterWrap = document.getElementById("loaderCounter");
-		const counter = { val: 0 };
-
-		const tl = gsap.timeline();
-
-		tl.to(counter, {
-			val: 100,
-			duration: 2,
-			ease: "counterEase",
-			onUpdate() {
-				counterValue.textContent = String(Math.round(counter.val)).padStart(2, "0");
-			}
-		})
-			.to(counterWrap, {
-				opacity: 0,
-				y: -20,
-				duration: 0.6,
-				ease: "counterEase"
-			}, "-=0.15")
-			.call(onComplete, null, "<");
-	}
-
-	if (DEBUG) {
-		gsap.set(".overlay", { display: "none" });
-		_loaderExited = true;
-		tryPlayHero();
-	} else {
-		// startLoader(() => {
-		// 	gsap.to(".bar", {
-		// 		duration: 1,
-		// 		height: 0,
-		// 		stagger: { amount: 0.15 },
-		// 		ease: "power4.inOut",
-		// 		onUpdate() {
-		// 			if (!_loaderExited && this.progress() >= 0.5) {
-		// 				_loaderExited = true;
-		// 				tryPlayHero();
-		// 			}
-		// 		}
-		// 	});
-		// });
-		gsap.set(".overlay", { display: "none" });
-		_loaderExited = true;
-		tryPlayHero();
-	}
+	_loaderExited = true;
+	tryPlayHero();
 
 
 	const heroSplits = [];
@@ -439,7 +394,8 @@ function init() {
 			type: "lines,words",
 			mask: "lines",
 			linesClass: "line++",
-			wordsClass: "word++"
+			wordsClass: "word++",
+			autoSplit: true
 		});
 		gsap.set(split.words, { y: "110%" });
 
@@ -475,7 +431,8 @@ function init() {
 		const split = SplitText.create(el, {
 			type: "lines,words",
 			mask: "lines",
-			linesClass: "line++"
+			linesClass: "line++",
+			autoSplit: true
 		});
 
 		const lines = split.lines;
@@ -503,7 +460,7 @@ function init() {
 	const heroH1 = document.querySelector(".hero h1");
 	if (heroH1) {
 		gsap.set(heroH1, { opacity: 1 });
-		const h1Split = SplitText.create(heroH1, { type: "lines,words,chars", mask: "lines" });
+		const h1Split = SplitText.create(heroH1, { type: "lines,words,chars", mask: "lines", autoSplit: true });
 		gsap.set(h1Split.chars, { y: "110%" });
 		if (h1Split.words[0]) heroZeroChars = Array.from(h1Split.words[0].children).reverse();
 		if (h1Split.words[1]) heroTwoChars = Array.from(h1Split.words[1].children);
@@ -608,7 +565,8 @@ function init() {
 			type: "lines,words",
 			mask: "lines",
 			linesClass: "line++",
-			wordsClass: "word++"
+			wordsClass: "word++",
+			autoSplit: true
 		});
 		gsap.set(titleSplit.words, { y: "110%" });
 
@@ -616,7 +574,8 @@ function init() {
 		const descSplit = SplitText.create(descEl, {
 			type: "lines,words",
 			mask: "lines",
-			linesClass: "line++"
+			linesClass: "line++",
+			autoSplit: true
 		});
 		gsap.set(descSplit.lines, { y: "110%" });
 
@@ -706,7 +665,8 @@ function init() {
 		const descSplit = SplitText.create(desc, {
 			type: "lines,words",
 			mask: "lines",
-			linesClass: "line++"
+			linesClass: "line++",
+			autoSplit: true
 		});
 		gsap.set(descSplit.lines, { y: "110%" });
 
@@ -1089,7 +1049,8 @@ function init() {
 			type: "lines,words",
 			mask: "lines",
 			linesClass: "line++",
-			wordsClass: "word++"
+			wordsClass: "word++",
+			autoSplit: true
 		});
 		gsap.set(split.words, { y: "110%" });
 		ScrollTrigger.create({
@@ -1139,7 +1100,7 @@ function init() {
 				if (split) split.revert();
 				el.textContent = text;
 				gsap.set(el, { opacity: 1 });
-				split = SplitText.create(el, { type: "lines,words", mask: "lines", linesClass: "line++" });
+				split = SplitText.create(el, { type: "lines,words", mask: "lines", linesClass: "line++", autoSplit: true });
 				gsap.killTweensOf(split.lines);
 				gsap.set(split.lines, { y: "110%" });
 				gsap.to(split.lines, {
@@ -1158,7 +1119,7 @@ function init() {
 				if (split) split.revert();
 				el.textContent = text;
 				gsap.set(el, { opacity: 1 });
-				split = SplitText.create(el, { type: "lines,words", mask: "lines", linesClass: "line++", wordsClass: "word++" });
+				split = SplitText.create(el, { type: "lines,words", mask: "lines", linesClass: "line++", wordsClass: "word++", autoSplit: true });
 				gsap.killTweensOf(split.words);
 				gsap.set(split.words, { y: "110%" });
 				gsap.to(split.words, {
@@ -1256,7 +1217,8 @@ function init() {
 				type: "lines,words",
 				mask: "lines",
 				linesClass: "line++",
-				wordsClass: "word++"
+				wordsClass: "word++",
+				autoSplit: true
 			});
 			gsap.set(split.words, { y: "110%" });
 			ScrollTrigger.create({
