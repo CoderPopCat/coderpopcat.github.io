@@ -934,7 +934,7 @@ body>section>div>h1>div>div>div.word.word2 {
   background: none;
   color: rgba(255, 255, 255, 0.75);
   font-family: Inter, sans-serif;
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 500;
   letter-spacing: 0.02em;
   text-transform: uppercase;
@@ -1430,9 +1430,9 @@ body>section>div>h1>div>div>div.word.word2 {
   display: grid;
   grid-template-columns: 2fr 3fr;
   background: #09090b;
-  border-bottom: 1px solid #ffffff18;
-  border-bottom-left-radius: 55px;
-  border-bottom-right-radius: 55px;
+  margin-top: 50px;
+  /* border-bottom: 1px solid #ffffff18; */
+
 }
 
 .testimonials-visual-col {
@@ -1450,7 +1450,7 @@ body>section>div>h1>div>div>div.word.word2 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-family: "Courier New", monospace;
+  font-family: Montserrat, monospace;
   font-size: 0.78rem;
   letter-spacing: 0.04em;
   color: #ffffff70;

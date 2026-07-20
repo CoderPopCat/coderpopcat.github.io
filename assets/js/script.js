@@ -1,4 +1,4 @@
-﻿const DEBUG = false;
+﻿const DEBUG = true;
 
 const lenis = new Lenis();
 window.lenis = lenis;
@@ -399,20 +399,23 @@ function init() {
 		_loaderExited = true;
 		tryPlayHero();
 	} else {
-		startLoader(() => {
-			gsap.to(".bar", {
-				duration: 1,
-				height: 0,
-				stagger: { amount: 0.15 },
-				ease: "power4.inOut",
-				onUpdate() {
-					if (!_loaderExited && this.progress() >= 0.5) {
-						_loaderExited = true;
-						tryPlayHero();
-					}
-				}
-			});
-		});
+		// startLoader(() => {
+		// 	gsap.to(".bar", {
+		// 		duration: 1,
+		// 		height: 0,
+		// 		stagger: { amount: 0.15 },
+		// 		ease: "power4.inOut",
+		// 		onUpdate() {
+		// 			if (!_loaderExited && this.progress() >= 0.5) {
+		// 				_loaderExited = true;
+		// 				tryPlayHero();
+		// 			}
+		// 		}
+		// 	});
+		// });
+		gsap.set(".overlay", { display: "none" });
+		_loaderExited = true;
+		tryPlayHero();
 	}
 
 
@@ -549,9 +552,9 @@ function init() {
 
 
 	gsap.fromTo(".about-reveal-section",
-		{ y: "15vh" },
+		{ y: "4vh" },
 		{
-			y: "-15vh",
+			y: "-4vh",
 			ease: "none",
 			scrollTrigger: {
 				trigger: ".about-reveal-section",
@@ -579,7 +582,7 @@ function init() {
 			scrollTrigger: {
 				trigger: aboutRevealEl,
 				start: "top bottom",
-				end: "bottom center",
+				end: "top 35%",
 				scrub: 1,
 			}
 		});
@@ -795,7 +798,33 @@ function init() {
 			};
 		}
 
-		ScrollTrigger.create({
+		function syncShowcase(progress) {
+			const { moveDistanceIndex, moveDistanceNames, moveDistanceImages } = getMetrics();
+
+			if (worksProgressBar) worksProgressBar.style.width = (progress * 100) + "%";
+
+			const currentIndex = Math.min(Math.floor(progress * TOTAL) + 1, TOTAL);
+			projectIndexH1.innerHTML =
+				String(currentIndex).padStart(2, "0") +
+				`<span class="index-total">/${String(TOTAL).padStart(2, "0")}</span>`;
+			gsap.set(projectIndexEl, { y: progress * moveDistanceIndex });
+
+			gsap.set(projectImagesEl, { y: progress * moveDistanceImages });
+
+			const activeIndex = Math.min(Math.floor(progress * TOTAL), TOTAL - 1);
+			nameEls.forEach((p, i) => {
+				const startP = i / TOTAL;
+				const endP = (i + 1) / TOTAL;
+				const pp = Math.max(0, Math.min(1, (progress - startP) / (endP - startP)));
+				gsap.set(p, { y: -pp * moveDistanceNames });
+				p.classList.toggle("active", pp > 0 && pp < 1);
+			});
+			cards.forEach((card, i) => {
+				gsap.to(card, { opacity: i === activeIndex ? 1 : 0.3, duration: 0.4, overwrite: "auto", ease: "none" });
+			});
+		}
+
+		const stickyScrollTrigger = ScrollTrigger.create({
 			trigger: projectsSticky,
 			start: "top top",
 			end: () => `+=${window.innerHeight * TOTAL * 0.9}px`,
@@ -812,34 +841,11 @@ function init() {
 				}
 			},
 			onUpdate(self) {
-				const progress = self.progress;
-				const { moveDistanceIndex, moveDistanceNames, moveDistanceImages } = getMetrics();
-
-				if (worksProgressBar) worksProgressBar.style.width = (progress * 100) + "%";
-
-				const currentIndex = Math.min(Math.floor(progress * TOTAL) + 1, TOTAL);
-				projectIndexH1.innerHTML =
-					String(currentIndex).padStart(2, "0") +
-					`<span class="index-total">/${String(TOTAL).padStart(2, "0")}</span>`;
-				gsap.set(projectIndexEl, { y: progress * moveDistanceIndex });
-
-				gsap.set(projectImagesEl, { y: progress * moveDistanceImages });
-
-				const activeIndex = Math.min(Math.floor(progress * TOTAL), TOTAL - 1);
-				nameEls.forEach((p, i) => {
-					const startP = i / TOTAL;
-					const endP = (i + 1) / TOTAL;
-					const pp = Math.max(0, Math.min(1, (progress - startP) / (endP - startP)));
-					gsap.set(p, { y: -pp * moveDistanceNames });
-					p.classList.toggle("active", pp > 0 && pp < 1);
-				});
-				cards.forEach((card, i) => {
-					gsap.to(card, { opacity: i === activeIndex ? 1 : 0.3, duration: 0.4, overwrite: "auto", ease: "none" });
-				});
+				syncShowcase(self.progress);
 			},
 		});
 
-		initCaseStudy(cards, projectIndexEl, projectNamesEl);
+		initCaseStudy(cards, projectIndexEl, projectNamesEl, () => syncShowcase(stickyScrollTrigger.progress));
 	}
 
 	const awardsListContainer = document.querySelector(".op-list");
@@ -1286,7 +1292,7 @@ function init() {
 
 }
 
-function initCaseStudy(cards, projectIndexEl, projectNamesEl) {
+function initCaseStudy(cards, projectIndexEl, projectNamesEl, resyncShowcase) {
 	const csRoot = document.getElementById("caseStudy");
 	if (!csRoot) return;
 
@@ -1309,7 +1315,7 @@ function initCaseStudy(cards, projectIndexEl, projectNamesEl) {
 	const csFigCounter = document.getElementById("csFigCounter");
 
 	const DUR = {
-		normal: { fade: 0.35, fadeSpread: 0.15, travel: 0.8, content: 0.5, inactiveFade: 0.15 },
+		normal: { fade: 0.28, fadeSpread: 0.11, travel: 0.65, content: 0.41, inactiveFade: 0.12 },
 		reduced: { fade: 0.15, fadeSpread: 0, travel: 0, content: 0.15, inactiveFade: 0.15 },
 	};
 
@@ -1552,7 +1558,7 @@ function initCaseStudy(cards, projectIndexEl, projectNamesEl) {
 
 		tl.to(fadeOutTargets, {
 			opacity: 0,
-			y: reduced ? 0 : -10,
+			y: reduced ? "+=0" : "-=10",
 			duration: d.fade,
 			stagger: { amount: d.fadeSpread, from: "start" },
 			ease: "power2.out",
@@ -1564,7 +1570,7 @@ function initCaseStudy(cards, projectIndexEl, projectNamesEl) {
 				opacity: 1,
 				y: 0,
 				duration: d.content,
-				stagger: reduced ? 0 : 0.075,
+				stagger: reduced ? 0 : 0.06,
 				ease: "power2.out",
 			});
 
@@ -1613,6 +1619,7 @@ function initCaseStudy(cards, projectIndexEl, projectNamesEl) {
 				gsap.set(fadeOutTargets, { clearProps: "all" });
 				gsap.set(phase3Targets, { clearProps: "all" });
 				gsap.set(csBlackout, { clearProps: "all" });
+				if (resyncShowcase) resyncShowcase();
 
 				if (window.lenis) window.lenis.start();
 				document.body.style.overflow = "";
@@ -1633,7 +1640,7 @@ function initCaseStudy(cards, projectIndexEl, projectNamesEl) {
 			opacity: 0,
 			y: reduced ? 0 : -16,
 			duration: d.content,
-			stagger: reduced ? 0 : 0.075,
+			stagger: reduced ? 0 : 0.06,
 			ease: "power2.out",
 		})
 			.add(fitTween)
@@ -1641,7 +1648,7 @@ function initCaseStudy(cards, projectIndexEl, projectNamesEl) {
 			.to(csBlackout, { opacity: 0, duration: d.fade }, `settled-=${d.fade * 0.85}`)
 			.to(fadeOutTargets, {
 				opacity: 1,
-				y: 0,
+				y: reduced ? "+=0" : "+=10",
 				duration: d.fade,
 				stagger: { amount: d.fadeSpread, from: "start" },
 				ease: "power2.out",
