@@ -1,4 +1,4 @@
-﻿const DEBUG = true;
+﻿const DEBUG = false;
 
 const lenis = new Lenis();
 window.lenis = lenis;
