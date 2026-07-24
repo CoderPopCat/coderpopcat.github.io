@@ -370,8 +370,50 @@ function init() {
 	}
 	_rafId = requestAnimationFrame(draw);
 
-	_loaderExited = true;
-	tryPlayHero();
+	function startLoader(onComplete) {
+		const counterValue = document.getElementById("loaderCounterValue");
+		const counterWrap = document.getElementById("loaderCounter");
+		const counter = { val: 0 };
+
+		const tl = gsap.timeline();
+
+		tl.to(counter, {
+			val: 100,
+			duration: 2,
+			ease: "counterEase",
+			onUpdate() {
+				counterValue.textContent = String(Math.round(counter.val)).padStart(2, "0");
+			}
+		})
+			.to(counterWrap, {
+				opacity: 0,
+				y: -20,
+				duration: 0.6,
+				ease: "counterEase"
+			}, "-=0.15")
+			.call(onComplete, null, "<");
+	}
+
+	if (DEBUG) {
+		gsap.set(".overlay", { display: "none" });
+		_loaderExited = true;
+		tryPlayHero();
+	} else {
+		startLoader(() => {
+			gsap.to(".bar", {
+				duration: 1,
+				height: 0,
+				stagger: { amount: 0.15 },
+				ease: "power4.inOut",
+				onUpdate() {
+					if (!_loaderExited && this.progress() >= 0.5) {
+						_loaderExited = true;
+						tryPlayHero();
+					}
+				}
+			});
+		});
+	}
 
 
 	const heroSplits = [];

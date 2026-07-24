@@ -48,6 +48,57 @@ body {
   hyphens: auto;
 }
 
+.overlay {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  display: flex;
+  pointer-events: none;
+}
+
+.bar {
+  width: 20vw;
+  height: 105vh;
+  background-color: #09090b;
+}
+
+.loader-counter {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 0 4vw 6vh;
+  pointer-events: none;
+  color: #f5f5f5;
+}
+
+.loader-counter-value {
+  font-family: PowerGrotesk, sans-serif;
+  font-size: clamp(4.5rem, 12vw, 9.5rem);
+  font-weight: 200;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-image: linear-gradient(0deg, rgba(234, 231, 224, 0.5), rgb(234, 231, 224));
+}
+
+.loader-counter-total {
+  font-size: 0.26em;
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  margin-left: 0.15em;
+  color: #555;
+  -webkit-text-fill-color: #555;
+}
+
 .hero {
   position: relative;
   z-index: 1;
